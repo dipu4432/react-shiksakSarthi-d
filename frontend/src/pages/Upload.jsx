@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+const API = import.meta.env.VITE_API_URL || 'https://react-shiksak-sarthi-apdp-melhqjjn9.vercel.app'
 
 export default function Upload() {
   const [files, setFiles] = useState([])

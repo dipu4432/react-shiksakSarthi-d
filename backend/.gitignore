@@ -4,3 +4,4 @@ env
 uploads/
 npm-debug.log
 .DS_Store
+.vercel
