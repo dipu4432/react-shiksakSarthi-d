@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { getToken, getUser } from '../lib/auth'
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
@@ -8,7 +7,6 @@ export default function Upload() {
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
-  const user = getUser()
 
   useEffect(() => {
     fetchList()
@@ -17,9 +15,21 @@ export default function Upload() {
   async function fetchList() {
     try {
       setLoading(true)
-      const res = await fetch(`${API}/api/media`)
+      // Fetch list directly from Cloudinary via backend endpoint
+      const res = await fetch(`${API}/api/media/cloudinary`)
       const data = await res.json()
-      setItems(data.items || [])
+      // cloudinary.api.resources returns an object with a `resources` array
+      const resources = data.resources || []
+      // normalize resource shape to match UI (`_id`, `url`, `public_id`, `resource_type`, `format`, `createdAt`)
+      const normalized = resources.map((r) => ({
+        _id: r.asset_id || r.public_id || `${r.public_id}-${r.filename}`,
+        url: r.secure_url || r.url || r.secure_url_https || '',
+        public_id: r.public_id,
+        resource_type: r.resource_type || r.type || 'unknown',
+        format: r.format,
+        createdAt: r.created_at || r.created_at
+      }))
+      setItems(normalized)
     } catch (err) {
       console.error(err)
       setMessage('Failed to fetch list')
@@ -42,13 +52,9 @@ export default function Upload() {
     try {
       setLoading(true)
       setMessage('')
-      const headers = {}
-      const token = getToken()
-      if (token) headers['Authorization'] = `Bearer ${token}`
 
       const res = await fetch(`${API}/api/media/upload`, {
         method: 'POST',
-        headers,
         body: fd
       })
 
@@ -74,17 +80,6 @@ export default function Upload() {
       <h2>Upload files</h2>
       
       <form onSubmit={onSubmit} style={{ marginBottom: 18 }}>
-        <div style={{ marginBottom: 8 }}>
-          {user ? (
-            <div style={{ marginBottom: 8 }}>
-              Logged in as <strong>{user.name}</strong> — <small>{user.email}</small>
-            </div>
-          ) : (
-            <div style={{ marginBottom: 8 }}>
-              <a href="/login">Log in</a> to upload files as an authenticated user.
-            </div>
-          )}
-        </div>
 
         <div style={{ marginBottom: 8 }}>
           <input type="file" multiple onChange={onFileChange} />

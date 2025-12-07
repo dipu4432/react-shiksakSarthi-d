@@ -10,23 +10,24 @@ exports.upload = async (req, res, next) => {
 
     const uploadSingle = (file) =>
       new Promise((resolve, reject) => {
-        const stream = cloudinary.uploader.upload_stream({ folder: 'siksha' }, async (error, result) => {
+        const stream = cloudinary.uploader.upload_stream({ folder: 'siksha' }, (error, result) => {
           if (error) return reject(error);
-          try {
-            const saved = await Media.create({
-              url: result.secure_url,
-              public_id: result.public_id,
-              format: result.format,
-              resource_type: result.resource_type,
-              bytes: result.bytes,
-              width: result.width,
-              height: result.height,
-              uploadedBy: req.user ? req.user.id : undefined
-            });
-            resolve(saved);
-          } catch (e) {
-            reject(e);
-          }
+          // Temporarily skip saving to MongoDB. Return the Cloudinary result object
+          // shaped similarly to the Media document so the frontend continues to work.
+          const saved = {
+            url: result.secure_url,
+            public_id: result.public_id,
+            format: result.format,
+            resource_type: result.resource_type,
+            bytes: result.bytes,
+            width: result.width,
+            height: result.height,
+            uploadedBy: req.user ? req.user.id : undefined,
+            // mimic mongoose generated fields if needed
+            createdAt: new Date(),
+            updatedAt: new Date()
+          };
+          resolve(saved);
         });
         stream.end(file.buffer);
       });

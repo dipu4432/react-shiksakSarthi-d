@@ -17,6 +17,6 @@ Endpoints
 
 - POST /api/auth/register  — register (name, email, password)
 - POST /api/auth/login     — login (email, password) -> returns JWT
-- POST /api/media/upload  — (protected) multipart/form-data file(s) under field `file` (single or multiple)
+- POST /api/media/upload  — multipart/form-data file(s) under field `file` (single or multiple)
 - GET  /api/media         — list media saved in MongoDB
 - GET  /api/media/cloudinary — list resources from Cloudinary (account-limited)
