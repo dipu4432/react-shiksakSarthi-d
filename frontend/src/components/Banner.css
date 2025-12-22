@@ -1,0 +1,242 @@
+/* ======================================== */
+/* DESKTOP VIEW (Your original overlay)     */
+/* ======================================== */
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RIGHT SIDE BEIGE PANEL (desktop only) */
+.half-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(251,237,210,0) 0%,
+    rgba(251,237,210,0.6) 8%,
+    rgba(251,237,210,1) 15%,
+    #fbedd2 100%
+  );
+  z-index: 2;
+}
+
+/* DESKTOP TEXT POSITION */
+.banner-text {
+  position: absolute;
+  top: 20%;
+  right: 12%;
+  width: 20%;
+  z-index: 5;
+  color: #47210E;
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-top: 40px;
+  margin-bottom:5px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.divider {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.validity {
+  margin-top: 15px;
+  font-size: 18px;
+  /* font-weight: bold; */
+}
+
+
+/* NON-CLICKABLE CONSULT BOX */
+.consult-box {
+  background: linear-gradient(to bottom, #c33a2c, #9b241b);
+  color: white;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  padding: 14px 30px;
+  border-radius: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 18px;
+
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+
+  /* IMPORTANT */
+  cursor: default;
+  user-select: none;
+}
+
+/* ===== PERFECT FLAT 25% OFF BADGE ===== */
+
+.flat-offer-badge {
+  position: relative;
+  display: inline-block;
+
+  background: #ffffff;
+  border: 1.5px solid #f3b63f; /* thinner & accurate */
+  border-radius: 8px;
+
+  padding: 8px 18px 18px;
+  text-align: center;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* BLUE MAIN TEXT */
+.flat-offer-top {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0b8ecf;
+  letter-spacing: 0.4px;
+  line-height: 1.1;
+}
+
+/* GREEN BOTTOM STRIP */
+.flat-offer-ribbon {
+  position: absolute;
+  left: 50%;
+  bottom: -11px;
+  transform: translateX(-50%);
+
+  background: #138f4b;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  padding: 4px 14px;
+  border-radius: 0 0 6px 6px;
+
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* T&C TEXT – DEFAULT (DESKTOP) */
+.tnc-text {
+  position: absolute;
+  bottom: 16px;
+  left: 24px;
+
+  font-size: 11px;
+  color: #ffffff;
+  opacity: 0.85;
+
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+
+
+/* Hide mobile content-section on desktop */
+/* .content-section {
+  display: none;
+} */
+
+/* ======================================== */
+/* MOBILE VIEW FIX — smooth fade + content   */
+/* ======================================== */
+
+@media (max-width: 768px) {
+
+  .image-wrapper {
+    position: relative;
+    height: auto;
+  }
+
+  .banner-text {
+    position: relative;  /* removes absolute */
+    right: auto;
+    top: auto;
+    width: 100%;
+    margin-top: -30px; /* pulls text closer to fade */
+    padding: 20px 15px;
+    background: #fbedd2;  /* mobile beige section */
+    text-align: center;
+  }
+
+   /* Fade bottom of image to transparent */
+  .banner-img {
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,1) 70%,     /* top image fully visible */
+      rgba(0,0,0,0.5) 85%,   /* partially transparent */
+      rgba(0,0,0,0) 100%     /* fully transparent at bottom */
+    );
+
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,1) 70%,
+      rgba(0,0,0,0.5) 85%,
+      rgba(0,0,0,0) 100%
+    );
+  }
+
+  /* Soft fade BELOW image (smooth like desktop) */
+  .mobile-fade {
+  width: 100%;
+  height: 90px;
+  margin-top: -8px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(251,237,210,0.10) 30%,   /* lighter */
+    rgba(251,237,210,0.25) 50%,   /* softer */
+    rgba(251,237,210,0.55) 75%,   /* still smooth */
+    #fbedd2 100%
+  );
+  }
+
+  /* disable desktop overlay on mobile */
+  .half-overlay {
+    display: none;
+  }
+
+  .flat-offer-top {
+    font-size: 20px;
+  }
+
+  .flat-offer-ribbon {
+    font-size: 11px;
+  }
+
+  .tnc-text {
+    position: relative;
+    bottom: auto;
+    left: auto;
+
+    margin: 12px 0 0;
+    padding: 0 16px;
+
+    color: #6b4b2a;
+    opacity: 1;
+    text-align: center;
+    font-size: 11px;
+  }
+}

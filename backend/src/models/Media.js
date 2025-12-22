@@ -2,6 +2,13 @@ const mongoose = require('mongoose');
 
 const mediaSchema = new mongoose.Schema({
   url: { type: String, required: true },
+  category: {
+    type: String,
+    required: true,
+    enum: ['kitchen', 'bedroom', 'livingroom', 'wardrobe', 'others'],
+    index: true
+  },
+  description: { type: String },
   public_id: { type: String },
   format: { type: String },
   resource_type: { type: String },

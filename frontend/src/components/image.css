@@ -1,0 +1,18 @@
+.image-box {
+  width: 100%;
+  aspect-ratio: 4 / 3;     /* same card size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2; /* empty space color */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}

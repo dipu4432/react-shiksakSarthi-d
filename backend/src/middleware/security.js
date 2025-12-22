@@ -21,7 +21,7 @@ module.exports = function securityMiddleware(app) {
 
   // Prevent XSS
   app.use(xss());
-
+/*
   // CORS - adjust origin as needed
   const allowedOrigins = [
   "http://localhost:5173",
@@ -52,3 +52,17 @@ app.use(
 
 app.options("*", cors());
 }
+*/
+
+// CORS - adjust origin as needed
+  app.use(
+    cors({
+      origin: function (origin, callback) {
+        // allow requests with no origin (mobile apps, curl)
+        if (!origin) return callback(null, true);
+        // implement whitelist logic here if needed
+        return callback(null, true);
+      }
+    })
+  );
+};

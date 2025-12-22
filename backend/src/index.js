@@ -13,7 +13,7 @@ const mediaRoutes = require('./routes/media');
 const app = express();
 
 // Connect to DB
-// connectDB();
+connectDB();
 
 // Cloudinary config
 cloudinaryConfig();
