@@ -22,6 +22,7 @@ function App() {
       <nav>
         <Link to="/" style={{ marginRight: 12 }}>Home</Link>
         <Link to="/upload">Upload</Link>
+        <Link to="/front" style={{ marginLeft: 12 }}>Front</Link>
       </nav>
       <Navigation onQuoteClick={openPopup} />
 
