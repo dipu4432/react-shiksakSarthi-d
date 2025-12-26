@@ -3,7 +3,7 @@ import viteLogo from '/vite.svg'
 
 import { useEffect, useState } from 'react'
 
-// const API = import.meta.env.VITE_API_URL || 'https://react-shiksak-sarthi.vercel.app'
+// const API = import.meta.env.VITE_API_URL || 'https://react-shiksak-sarthi-d-bcib.vercel.app'
 const API = import.meta.env.VITE_API_URL || 'https://react-shiksak-sarthi-d-bcib.vercel.app'
 
 export default function Home() {
