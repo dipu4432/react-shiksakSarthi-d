@@ -10,7 +10,7 @@ import "./image.css";
 // All real images (do NOT repeat them here)
 // const images = [img1, img2, img3, img4, img5];
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d-bcib.vercel.app";
 
 export default function Home7() {
   const [images, setImages] = useState([]); // uploaded images

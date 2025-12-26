@@ -16,7 +16,7 @@ import "./image.css";
 //   { img: img5, title: "Smart Interior Solutions For Your Home" }
 // ];
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d-bcib.vercel.app";
 
 export default function LivingRoomInteriors() {
   const [images, setImages] = useState([]);     // uploaded images

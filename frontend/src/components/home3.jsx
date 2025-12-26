@@ -15,7 +15,7 @@ import "./image.css";
 //   { img: img4, title: "Maximise Your Modular Kitchen Storage" },
 // ];
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d-bcib.vercel.app";
 
 const Home3 = () => {
   const [images, setImages] = useState([]);     // uploaded images
