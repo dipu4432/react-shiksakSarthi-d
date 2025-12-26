@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getToken, authFetch } from "../lib/auth";
 
-const API = import.meta.env.VITE_API_URL || 'https://react-shiksak-sarthi-d-bcib.vercel.app'
-// const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d-bcib.vercel.app";
+const API = import.meta.env.VITE_API_URL || 'https://react-shiksak-sarthi-d.vercel.app/'
+// const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d.vercel.app/";
 
 export default function Upload() {
   const [files, setFiles] = useState([]);
