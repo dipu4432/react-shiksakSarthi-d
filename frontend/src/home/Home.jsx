@@ -16,31 +16,31 @@ export default function Home() {
   fetchList()
 }, [])
 
-async function fetchList() {
-    try {
-      setLoading(true)
-      const res = await fetch(`${API}/api/media/cloudinary`)
-      const data = await res.json()
+// async function fetchList() {
+//     try {
+//       setLoading(true)
+//       const res = await fetch(`${API}/api/media/cloudinary`)
+//       const data = await res.json()
 
-      const resources = data.resources || []
+//       const resources = data.resources || []
 
-      const normalized = resources.map((r) => ({
-        _id: r.asset_id || r.public_id,
-        url: r.secure_url || r.url || '',
-        public_id: r.public_id,
-        resource_type: r.resource_type || 'unknown',
-        format: r.format,
-        createdAt: r.created_at
-      }))
+//       const normalized = resources.map((r) => ({
+//         _id: r.asset_id || r.public_id,
+//         url: r.secure_url || r.url || '',
+//         public_id: r.public_id,
+//         resource_type: r.resource_type || 'unknown',
+//         format: r.format,
+//         createdAt: r.created_at
+//       }))
 
-      setItems(normalized)
-    } catch (err) {
-      console.error(err)
-      setMessage('Failed to load uploaded items')
-    } finally {
-      setLoading(false)
-    }
-}
+//       setItems(normalized)
+//     } catch (err) {
+//       console.error(err)
+//       setMessage('Failed to load uploaded items')
+//     } finally {
+//       setLoading(false)
+//     }
+// }
   return (
     <>
       <div>
@@ -55,7 +55,7 @@ async function fetchList() {
       <p className="read-the-docs">
         Use the Upload link to upload files to the backend and view the uploaded list.
       </p>
-      <section>
+      {/* <section>
         <h3>Uploaded items</h3>
         {loading && <div>Loading list...</div>}
         {!loading && items.length === 0 && <div>No uploaded items found.</div>}
@@ -71,7 +71,7 @@ async function fetchList() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
