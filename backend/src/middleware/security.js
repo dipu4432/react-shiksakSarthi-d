@@ -25,8 +25,8 @@ module.exports = function securityMiddleware(app) {
   // CORS - adjust origin as needed
   const allowedOrigins = [
   "http://localhost:5173",
-  "https://react-shiksak-sarthi-d-c4xm.vercel.app/",
-  "https://react-shiksak-sarthi-d.vercel.app/"
+  "https://react-shiksak-sarthi-d-c4xm.vercel.app",
+  "https://react-shiksak-sarthi-d.vercel.app"
 ];
 
 app.use(
@@ -45,12 +45,12 @@ app.use(
       return callback(new Error("Not allowed by CORS"));
     },
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"],
     credentials: true,
   })
 );
 
-app.options("*", cors());
+// app.options("*", cors());
 }
 
 

@@ -17,6 +17,11 @@ function App() {
   const openPopup = () => setShowPopup(true);
   const closePopup = () => setShowPopup(false);
 
+  function PrivateRoute({ children }) {
+  const token = localStorage.getItem("token");
+  return token ? children : <Navigate to="/login" />;
+}
+
   return (
     <div>
       <nav>

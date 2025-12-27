@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getToken, authFetch } from "../lib/auth";
 
-const API = import.meta.env.VITE_API_URL || 'https://react-shiksak-sarthi-d.vercel.app/'
-// const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d.vercel.app/";
+const API = import.meta.env.VITE_API_URL; // || 'https://react-shiksak-sarthi-d.vercel.app'
+// const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d.vercel.app";
 
 export default function Upload() {
   const [files, setFiles] = useState([]);
@@ -52,6 +52,12 @@ export default function Upload() {
     e.preventDefault();
     if (!files.length) return setMessage("Please choose at least one file");
 
+    const token = getToken();
+  if (!token) {
+    setMessage("You are not logged in. Please login again.");
+    return;
+  }
+
     const fd = new FormData();
     files.forEach((f) => fd.append("file", f));
     // include description text sent from the UI
@@ -62,12 +68,14 @@ export default function Upload() {
       setLoading(true);
       setMessage("");
       console.log("UPLOAD URL:", `${API}/api/media/upload`);
+      console.log("UPLOAD TOKEN:", token);
 
-      const token = getToken();
+      // const token = getToken();
       const res = await fetch(`${API}/api/media/upload`, {
         method: "POST",
         // Do not set Content-Type for multipart; the browser sets the boundary.
-        headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+        // headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+        headers: { Authorization: `Bearer ${token}` },
         body: fd,
       });
 
@@ -256,9 +264,9 @@ export default function Upload() {
                         `${API}/api/media/${encodeURIComponent(it.public_id)}`,
                         {
                           method: "DELETE",
-                          headers: token
-                            ? { Authorization: `Bearer ${token}` }
-                            : undefined,
+                          // headers: token
+                          //   ? { Authorization: `Bearer ${token}` }
+                          //   : undefined,
                         }
                       );
                       const djson = await dres.json();

@@ -9,6 +9,8 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
+
+console.log("JWT_SECRET USED:", process.env.JWT_SECRET);
 // Protect middleware - verifies JWT from Authorization header or cookie and attaches user to req.user
 exports.protect = async (req, res, next) => {
   try {
