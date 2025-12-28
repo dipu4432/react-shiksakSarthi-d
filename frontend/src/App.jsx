@@ -17,10 +17,10 @@ function App() {
   const openPopup = () => setShowPopup(true);
   const closePopup = () => setShowPopup(false);
 
-  function PrivateRoute({ children }) {
-  const token = localStorage.getItem("token");
-  return token ? children : <Navigate to="/login" />;
-}
+//   function PrivateRoute({ children }) {
+//   const token = localStorage.getItem("token");
+//   return token ? children : <Navigate to="/login" />;
+// }
 
   return (
     <div>
@@ -28,6 +28,7 @@ function App() {
         <Link to="/" style={{ marginRight: 12 }}>Home</Link>
         <Link to="/upload">Upload</Link>
         <Link to="/front" style={{ marginLeft: 12 }}>Front</Link>
+        <Link to="/register" style={{ marginLeft: 12 }}>Register</Link>
       </nav>
       <Navigation onQuoteClick={openPopup} />
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/front" element={<Front />} />
+          
         </Routes>
       </main>
       <Footer />
