@@ -1,9 +1,9 @@
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-const mongoSanitize = require('express-mongo-sanitize');
-const xss = require('xss-clean');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
+const mongoSanitize = require("express-mongo-sanitize");
+const xss = require("xss-clean");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 module.exports = function securityMiddleware(app) {
   // Helmet for headers
@@ -24,35 +24,43 @@ module.exports = function securityMiddleware(app) {
 
   // CORS - adjust origin as needed
   const allowedOrigins = [
-  "http://localhost:5173",
-  "https://react-shiksak-sarthi-d-c4xm.vercel.app",
-  "https://react-shiksak-sarthi-d.vercel.app"
-];
+    "http://localhost:5173",
+    "https://react-shiksak-sarthi-d-c4xm.vercel.app",
+    "https://react-shiksak-sarthi-d.vercel.app",
+  ];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
+  app.use(
+    cors({
+      origin: function (origin, callback) {
+        // 1. Allow requests from serverless (no origin)
+        if (!origin) return callback(null, true);
 
-      // 1. Allow requests from serverless (no origin)
-      if (!origin) return callback(null, true);
+        // 2. Allow requests from frontend
+        // if (allowedOrigins.includes(origin)) {
+        //   return callback(null, true);
+        // }
 
-      // 2. Allow requests from frontend
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+        // 2. Allow requests from frontend (Vercel + localhost)
+        if (allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+          return callback(null, true);
+        }
 
-      // 3. Block everything else
-      return callback(new Error("Not allowed by CORS"));
-    },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"],
-    credentials: true,
-  })
-);
+        // 3. Block everything else
+        return callback(new Error("Not allowed by CORS"));
+      },
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      allowedHeaders: [
+        "Content-Type",
+        "Authorization",
+        "X-Requested-With",
+        "Accept",
+      ],
+      credentials: true,
+    })
+  );
 
-// app.options("*", cors());
-}
-
+  // app.options("*", cors());
+};
 
 // // CORS - adjust origin as needed
 //   app.use(
