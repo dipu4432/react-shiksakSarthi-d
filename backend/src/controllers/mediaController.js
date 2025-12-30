@@ -128,23 +128,23 @@ exports.list = async (req, res, next) => {
       category = null;
     }
 
-    let items = [];
+    // let items = [];
 
     // Try filtered query ONLY if category is valid
     if (category) {
       items = await Media.find({ category })
         .sort({ createdAt: -1 })
         .limit(100)
-        .populate('uploadedBy', 'name email');
+        // .populate('uploadedBy', 'name email');
     }
 
     // 🔥 FALLBACK: if no filtered data OR no category
-    if (!category || items.length === 0) {
-      items = await Media.find({})
-        .sort({ createdAt: -1 })
-        .limit(100)
-        .populate('uploadedBy', 'name email');
-    }
+    // if (!category || items.length === 0) {
+    //   items = await Media.find({})
+    //     .sort({ createdAt: -1 })
+    //     .limit(100)
+    //     .populate('uploadedBy', 'name email');
+    // }
 
     res.json({
       count: items.length,

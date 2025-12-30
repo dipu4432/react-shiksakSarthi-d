@@ -17,6 +17,8 @@ const mediaSchema = new mongoose.Schema({
   height: { type: Number },
   uploadedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   createdAt: { type: Date, default: Date.now }
-});
+},
+{ timestamps: true }  // creates createdAt
+);
 
 module.exports = mongoose.model('Media', mediaSchema);
