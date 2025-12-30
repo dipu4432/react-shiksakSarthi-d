@@ -1,3 +1,4 @@
+/*
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
@@ -19,3 +20,36 @@ const connectDB = async () => {
 };
 
 module.exports = { connectDB };
+*/
+
+const mongoose = require("mongoose");
+
+let isConnected = false;
+
+const connectDB = async () => {
+  const uri = process.env.MONGO_URI;
+
+  if (!uri) {
+    throw new Error("MONGO_URI not set in environment");
+  }
+
+  if (isConnected) {
+    return;
+  }
+
+  try {
+    const conn = await mongoose.connect(uri, {
+      bufferCommands: false,
+    });
+
+    isConnected = conn.connections[0].readyState === 1;
+    console.log("MongoDB connected");
+  } catch (err) {
+    console.error("MongoDB connection error:", err);
+    throw err; // DO NOT exit process
+  }
+};
+
+module.exports = { connectDB };
+
+
