@@ -119,45 +119,32 @@ exports.list = async (req, res, next) => {
   }
 };
 */
-exports.list = async (req, res, next) => {
+exports.list = async (req, res) => {
   try {
     let { category } = req.query;
 
-    // Normalize bad values
     if (!category || category === "all" || category === "undefined") {
       category = null;
     }
 
-    let items = [];
+    const filter = category ? { category } : {};
 
-    // Try filtered query ONLY if category is valid
-    if (category) {
-      items = await Media.find({ category })
-        .sort({ createdAt: -1 })
-        // .limit(100)
-        // .populate('uploadedBy', 'name email');
-    }
-
-    // 🔥 FALLBACK: if no filtered data OR no category
-    // if (!category || items.length === 0) {
-    //   items = await Media.find({})
-    //     .sort({ createdAt: -1 })
-    //     .limit(100)
-    //     .populate('uploadedBy', 'name email');
-    // }
+    const items = await Media.find(filter)
+      .sort({ createdAt: -1 });
 
     res.json({
       count: items.length,
-      items
+      items,
     });
 
   } catch (err) {
-    next(err);
+    console.error("MEDIA LIST ERROR:", err);
     res.status(500).json({
       message: "Failed to fetch media",
     });
   }
 };
+
 
 
 // Optional: directly list Cloudinary resources (requires API key/secret)
