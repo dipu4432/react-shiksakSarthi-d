@@ -12,6 +12,9 @@ const mediaRoutes = require('./routes/media');
 
 const app = express();
 
+// REQUIRED FOR VERCEL / PROXY
+app.set('trust proxy', 1);
+
 // Connect to DB
 connectDB();
 
