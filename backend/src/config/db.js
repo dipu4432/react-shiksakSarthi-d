@@ -24,32 +24,30 @@ module.exports = { connectDB };
 
 const mongoose = require("mongoose");
 
-let isConnected = false;
+let cached = global.mongoose;
+
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
 
 const connectDB = async () => {
-  const uri = process.env.MONGO_URI;
-
-  if (!uri) {
-    throw new Error("MONGO_URI not set in environment");
+  if (cached.conn) {
+    return cached.conn;
   }
 
-  if (isConnected) {
-    return;
+  if (!cached.promise) {
+    const uri = process.env.MONGO_URI;
+    if (!uri) {
+      throw new Error("MONGO_URI not set");
+    }
+
+    cached.promise = mongoose.connect(uri).then((mongoose) => mongoose);
   }
 
-  try {
-    const conn = await mongoose.connect(uri, {
-      bufferCommands: false,
-    });
-
-    isConnected = conn.connections[0].readyState === 1;
-    console.log("MongoDB connected");
-  } catch (err) {
-    console.error("MongoDB connection error:", err);
-    throw err; // DO NOT exit process
-  }
+  cached.conn = await cached.promise;
+  console.log("MongoDB connected");
+  return cached.conn;
 };
 
 module.exports = { connectDB };
-
 

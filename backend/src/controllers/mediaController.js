@@ -123,14 +123,20 @@ exports.list = async (req, res) => {
   try {
     let { category } = req.query;
 
+    // normalize category
     if (!category || category === "all" || category === "undefined") {
       category = null;
     }
 
-    const filter = category ? { category } : {};
+    let filter = {};
+    if (category) {
+      filter.category = category;
+    }
 
     const items = await Media.find(filter)
-      .sort({ createdAt: -1 });
+      .sort({ createdAt: -1 })
+      .limit(100)
+      .populate("uploadedBy", "name email");
 
     res.json({
       count: items.length,
@@ -140,10 +146,11 @@ exports.list = async (req, res) => {
   } catch (err) {
     console.error("MEDIA LIST ERROR:", err);
     res.status(500).json({
-      message: "Failed to fetch media",
+      message: err.message,
     });
   }
 };
+
 
 
 
