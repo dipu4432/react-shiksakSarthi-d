@@ -104,7 +104,7 @@ function App() {
 
   return (
     <div>
-      <nav style={{ padding: 12, borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between' }}>
+      {/* <nav style={{ padding: 12, borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between' }}>
         <div>
           <Link to="/" style={{ marginRight: 12 }}>Home</Link>
           <Link to="/upload" style={{ marginRight: 12 }}>Upload</Link>
@@ -123,16 +123,16 @@ function App() {
             </>
           )}
         </div>
-      </nav>
+      </nav> */}
       <Navigation />
 
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/upload" element={<Upload />} />
-          <Route path="/front" element={<Front />} />
-          <Route path="/login" element={<Login onLogin={(u) => setUser(u)} />} />
-          <Route path="/register" element={<Register onRegister={(u) => setUser(u)} />} />
+          <Route path="/" element={<Front />} />
+          {/* <Route path="/login" element={<Login onLogin={(u) => setUser(u)} />} />
+          <Route path="/register" element={<Register onRegister={(u) => setUser(u)} />} /> */}
         </Routes>
       </main>
       <Footer />
