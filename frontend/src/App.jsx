@@ -66,10 +66,10 @@ export default App
 
 import { Link, Routes, Route, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import Home from './home/Home'
+// import Home from './home/Home'
 import Upload from './pages/Upload'
-import Login from './pages/Login'
-import Register from './pages/Register'
+// import Login from './pages/Login'
+// import Register from './pages/Register'
 import { getUser, clearAuth, getToken } from './lib/auth'
 // import './App.css'
 
@@ -83,6 +83,13 @@ const API = import.meta.env.VITE_API_URL || 'https://react-shiksak-sarthi-d.verc
 function App() {
   const [user, setUser] = useState(getUser())
   const navigate = useNavigate()
+  
+  // POPUP STATE
+  const [showPopup, setShowPopup] = useState(false);
+
+  // OPEN POPUP METHOD (will be sent to Navbar)
+  const openPopup = () => setShowPopup(true);
+  const closePopup = () => setShowPopup(false);
 
   async function handleLogout() {
     try {
@@ -124,7 +131,7 @@ function App() {
           )}
         </div>
       </nav> */}
-      <Navigation />
+      <Navigation onQuoteClick={openPopup} />
 
       <main>
         <Routes>
@@ -136,6 +143,21 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      {/* POPUP OVERLAY */}
+      {showPopup && (
+        <div
+          className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+          style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 9999 }}
+        >
+          <div
+            className="bg-white p-4 rounded shadow"
+            style={{ width: "90%", paddingTop: "90px", maxWidth: "600px" }}
+          >
+            <button className="btn-close float-end" onClick={closePopup}></button>
+            <ConsultationForm />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
