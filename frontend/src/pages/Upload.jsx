@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getToken, authFetch } from "../lib/auth";
+// import { getToken, authFetch } from "../lib/auth";
 
 const API = import.meta.env.VITE_API_URL; // || 'https://react-shiksak-sarthi-d.vercel.app'
 // const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d.vercel.app";
@@ -52,11 +52,11 @@ export default function Upload() {
     e.preventDefault();
     if (!files.length) return setMessage("Please choose at least one file");
 
-    const token = getToken();
-  if (!token) {
-    setMessage("You are not logged in. Please login again.");
-    return;
-  }
+  //   const token = getToken();
+  // if (!token) {
+  //   setMessage("You are not logged in. Please login again.");
+  //   return;
+  // }
 
     const fd = new FormData();
     files.forEach((f) => fd.append("file", f));
@@ -68,14 +68,14 @@ export default function Upload() {
       setLoading(true);
       setMessage("");
       console.log("UPLOAD URL:", `${API}/api/media/upload`);
-      console.log("UPLOAD TOKEN:", token);
+      // console.log("UPLOAD TOKEN:", token);
 
       // const token = getToken();
       const res = await fetch(`${API}/api/media/upload`, {
         method: "POST",
         // Do not set Content-Type for multipart; the browser sets the boundary.
         // headers: token ? { Authorization: `Bearer ${token}` } : undefined,
-        headers: { Authorization: `Bearer ${token}` },
+        // headers: { Authorization: `Bearer ${token}` },
         body: fd,
       });
 
@@ -256,12 +256,12 @@ export default function Upload() {
                     if (!confirm("Delete this item?")) return;
                     try {
                       setLoading(true);
-                      const token = getToken();
-                      console.log(token, "token");
+                      // const token = getToken();
+                      // console.log(token, "token");
 
                       // use authFetch to include Authorization header if token present
-                      const dres = await authFetch(
-                        `${API}/api/media/${encodeURIComponent(it.public_id)}`,
+                      const dres = await fetch(
+                        `${API}/api/media?public_id=${encodeURIComponent(it.public_id)}`,
                         {
                           method: "DELETE",
                           // headers: token

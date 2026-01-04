@@ -25,7 +25,7 @@ const normalizedCategory = rawCategory
 
       // console.log("UPLOAD CATEGORY:", req.body.category);
 
-      console.log("FINAL CATEGORY:", category);
+      // console.log("FINAL CATEGORY:", category);
 
     const results = [];
 
@@ -207,30 +207,31 @@ exports.listCloudinary = async (req, res, next) => {
 // Only uploader (or admin later) can delete
 exports.delete = async (req, res, next) => {
   try {
-    const { id } = req.params;
+    // const { public_id } = req.params;
+    const { public_id } = req.query;
 
     // id here = Cloudinary public_id (e.g. siksha/kitchen/fw2n)
-    if (!id) {
+    if (!public_id) {
       return res.status(400).json({ message: 'Missing public_id' });
     }
 
-    // 🔎 Find media by public_id (NOT Mongo _id)
-    const media = await Media.findOne({ public_id: id });
+    //  Find media by public_id (NOT Mongo _id)
+    const media = await Media.findOne({ public_id });
 
     if (!media) {
       return res.status(404).json({ message: 'Media not found' });
     }
 
     // Authorization: only uploader can delete
-    if (
-      media.uploadedBy &&
-      req.user &&
-      media.uploadedBy.toString() !== req.user.id.toString()
-    ) {
-      return res.status(403).json({ message: 'Forbidden: not the owner' });
-    }
+    // if (
+    //   media.uploadedBy &&
+    //   req.user &&
+    //   media.uploadedBy.toString() !== req.user.id.toString()
+    // ) {
+    //   return res.status(403).json({ message: 'Forbidden: not the owner' });
+    // }
 
-    // ☁️ Delete from Cloudinary
+    //  Delete from Cloudinary
     try {
       const resourceType = media.resource_type || 'image';
 
@@ -245,12 +246,12 @@ exports.delete = async (req, res, next) => {
       );
     }
 
-    // 🗑️ Delete from MongoDB
-    await Media.deleteOne({ public_id: id });
+    // Delete from MongoDB
+    await Media.deleteOne({ public_id });
 
     return res.json({
       message: 'Deleted successfully',
-      public_id: id
+      public_id
     });
   } catch (err) {
     next(err);

@@ -10,12 +10,12 @@ const storage = multer.memoryStorage();
 const uploadMiddleware = multer({ storage, limits: { fileSize: 10 * 1024 * 1024 } });
 
 // Require authentication for uploads
-router.post('/upload', protect, uploadMiddleware.array('file', 10), upload);
+router.post('/upload', uploadMiddleware.array('file', 10), upload);
 // Frontend should use this (MongoDB + description )
 router.get('/', list);
 router.get('/cloudinary', listCloudinary);
 
-// Delete media by id (protected)
-router.delete('/:id', protect, deleteMedia);
+// Delete media by id
+router.delete('/', deleteMedia);
 
 module.exports = router;
