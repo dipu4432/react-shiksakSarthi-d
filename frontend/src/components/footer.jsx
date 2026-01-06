@@ -28,7 +28,7 @@ const Footer = () => {
       <button
         type="button"
         onClick={handleClick}
-        className={`btn fs-1 p-0 border-0 ${
+        className={`btn fs-1 p-0 border-0 ps-2 ${
           clickCount >= 10 ? "text-danger" : "text-secondary"
         }`}
       >

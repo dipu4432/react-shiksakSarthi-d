@@ -35,7 +35,7 @@ const Navigation = ({ onQuoteClick }) => {
             <ul className="navbar-nav ms-auto gap-4">
 
               <li className="nav-item">
-                <Link className="nav-link" to="/home">HOME</Link>
+                <Link className="nav-link" to="/">HOME</Link>
               </li>
 
               <li className="nav-item">
@@ -85,7 +85,7 @@ const Navigation = ({ onQuoteClick }) => {
           <ul className="navbar-nav gap-3">
 
             <li className="nav-item">
-              <Link className="nav-link" to="/home" data-bs-dismiss="offcanvas">HOME</Link>
+              <Link className="nav-link" to="/" data-bs-dismiss="offcanvas">HOME</Link>
             </li>
 
             <li className="nav-item">
