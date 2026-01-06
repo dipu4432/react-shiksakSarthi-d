@@ -107,7 +107,7 @@ export default function Upload() {
 
 
   return (
-    <div style={{ maxWidth: 900 }}>
+    <div style={{ maxWidth: 900, margin: "0 auto" }}>
       <h2>Upload files</h2>
 
       <form onSubmit={onSubmit} style={{ marginBottom: 18 }}>
