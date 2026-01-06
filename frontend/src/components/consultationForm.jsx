@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ConsultationForm = () => {
+export default function ConsultationForm({onSuccess})  {
   const [bhk, setBhk] = useState("");
   const [location, setLocation] = useState("");
   const [name, setName] = useState("");
@@ -15,6 +15,9 @@ const ConsultationForm = () => {
     console.log("Form Submitted:", formData);
 
     alert("Form submitted successfully!");
+
+    // CLOSE POPUP AFTER SUCCESS
+    onSuccess?.();
   };
 
   return (
@@ -109,4 +112,4 @@ const ConsultationForm = () => {
   );
 };
 
-export default ConsultationForm;
+// export default ConsultationForm;

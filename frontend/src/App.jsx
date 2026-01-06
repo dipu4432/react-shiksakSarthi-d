@@ -154,7 +154,7 @@ function App() {
             style={{ width: "90%", paddingTop: "90px", maxWidth: "600px" }}
           >
             <button className="btn-close float-end" onClick={closePopup}></button>
-            <ConsultationForm />
+            <ConsultationForm onSuccess={closePopup} />
           </div>
         </div>
       )}
