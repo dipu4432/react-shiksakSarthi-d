@@ -110,7 +110,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="text-bg-light">
       {/* <nav style={{ padding: 12, borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between' }}>
         <div>
           <Link to="/" style={{ marginRight: 12 }}>Home</Link>

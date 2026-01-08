@@ -108,88 +108,134 @@ export default function Upload() {
   }, {});
 
   return (
-    <div style={{ maxWidth: 900, margin: "0 auto" }}>
-      <h2>Upload files</h2>
+    <div className="text-bg-light">
+      {/* <h2 className="text-center fw-bold m-4">UPLOAD FILES</h2> */}
+      <h2 className="text-center fw-semibold mt-4 mb-4 text-primary">
+        UPLOAD FILES
+      </h2>
+      <div className="container d-flex justify-content-center mb-4">
+        <div
+          className="card shadow-lg border-0"
+          style={{ maxWidth: "600px", width: "100%" }}
+        >
+          <div className="card-body p-4">
+            <form onSubmit={onSubmit} className="p-3">
+              {/* FILE INPUT */}
+              <div className="mb-3">
+                <label className="form-label fw-semibold">Upload Images</label>
+                <input
+                  type="file"
+                  multiple
+                  onChange={onFileChange}
+                  className="form-control"
+                  required
+                />
+              </div>
 
-      <form onSubmit={onSubmit} style={{ marginBottom: 18 }}>
-        <div style={{ marginBottom: 8 }}>
-          <input type="file" multiple onChange={onFileChange} />
+              {/* CATEGORY
+              <p className="fw-semibold mb-2">Choose option</p>
+
+              <div className="mb-3">
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="category"
+                    value="kitchen"
+                    checked={category === "kitchen"}
+                    onChange={(e) => setCatogery(e.target.value)}
+                    required
+                  />
+                  <label className="form-check-label">Kitchen</label>
+                </div>
+
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="category"
+                    value="bedroom"
+                    checked={category === "bedroom"}
+                    onChange={(e) => setCatogery(e.target.value)}
+                  />
+                  <label className="form-check-label">Bedroom</label>
+                </div>
+
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="category"
+                    value="livingroom"
+                    checked={category === "livingroom"}
+                    onChange={(e) => setCatogery(e.target.value)}
+                  />
+                  <label className="form-check-label">Living Room</label>
+                </div>
+
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="category"
+                    value="wardrobe"
+                    checked={category === "wardrobe"}
+                    onChange={(e) => setCatogery(e.target.value)}
+                  />
+                  <label className="form-check-label">Wardrobe</label>
+                </div>
+              </div> */}
+              {/* CATEGORY DROPDOWN */}
+              <div className="mb-3">
+                <label className="form-label fw-semibold">Choose option</label>
+
+                <select
+                  className="form-select"
+                  value={category}
+                  onChange={(e) => setCatogery(e.target.value)}
+                  required
+                >
+                  <option value="">Select category</option>
+                  <option value="kitchen">Kitchen</option>
+                  <option value="bedroom">Bedroom</option>
+                  <option value="livingroom">Living Room</option>
+                  <option value="wardrobe">Wardrobe</option>
+                </select>
+              </div>
+
+              {/* DESCRIPTION */}
+              <div className="mb-3">
+                <label className="form-label fw-semibold">
+                  Description <span className="text-muted">(optional)</span>
+                </label>
+                <input
+                  type="text"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder="Add a description for these files"
+                  className="form-control"
+                />
+              </div>
+
+              {/* SUBMIT BUTTON */}
+              <div className="d-grid">
+                <button
+                  type="submit"
+                  className="btn btn-primary mb-4"
+                  disabled={loading}
+                >
+                  {loading ? "Uploading..." : "Upload"}
+                </button>
+              </div>
+              {message && <div>{message}</div>}
+            </form>
+            {/* {message && <div style={{ marginBottom: 12 }}>{message}</div>} */}
+          </div>
         </div>
-        <p>Choose option</p>
-
-        <label>
-          <input
-            type="radio"
-            name="category"
-            value="kitchen"
-            checked={category === "kitchen"}
-            onChange={(e) => setCatogery(e.target.value)}
-            required
-          />
-          Kitchen
-        </label>
-
-        <label>
-          <input
-            type="radio"
-            name="category"
-            value="bedroom"
-            checked={category === "bedroom"}
-            onChange={(e) => setCatogery(e.target.value)}
-          />
-          Bedroom
-        </label>
-
-        <label>
-          <input
-            type="radio"
-            name="category"
-            value="livingroom"
-            checked={category === "livingroom"}
-            onChange={(e) => setCatogery(e.target.value)}
-          />
-          Living Room
-        </label>
-
-        <label>
-          <input
-            type="radio"
-            name="category"
-            value="wardrobe"
-            checked={category === "wardrobe"}
-            onChange={(e) => setCatogery(e.target.value)}
-          />
-          Wardrobe
-        </label>
-
-        <div style={{ marginBottom: 8 }}>
-          <label style={{ display: "block", fontSize: 13, marginBottom: 6 }}>
-            Description (optional)
-          </label>
-          <input
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder="Add a description for these files"
-            style={{
-              width: "100%",
-              padding: 8,
-              borderRadius: 6,
-              border: "1px solid #ddd",
-            }}
-          />
-        </div>
-
-        <div>
-          <button type="submit" disabled={loading}>
-            {loading ? "Uploading..." : "Upload"}
-          </button>
-        </div>
-      </form>
-
-      {message && <div style={{ marginBottom: 12 }}>{message}</div>}
+      </div>
 
       <section>
-        <h3>Uploaded items</h3>
+        <h3 className="mt-4">Uploaded items</h3>
         {loading && <div>Loading list...</div>}
         {!loading && items.length === 0 && <div>No uploaded items found.</div>}
         <div
