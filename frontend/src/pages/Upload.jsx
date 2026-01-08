@@ -426,7 +426,7 @@ export default function Upload() {
         </div>
       </section> */}
       <section className="container mt-5">
-        <h4 className="fw-semibold mb-4">Uploaded Items</h4>
+        <h4 className="text-center fw-semibold mt-2 mb-4 text-primary">UPLOADED ITEMS</h4>
 
         {Object.keys(groupedItems).length === 0 && (
           <div className="text-muted">No uploaded items found.</div>
@@ -460,10 +460,25 @@ export default function Upload() {
                     )}
 
                     <div className="card-body p-2">
-                      <small className="text-muted d-block mb-2">
+                      {/* <small className="text-muted d-block mb-2">
                         {new Date(it.createdAt).toLocaleString()}
-                      </small>
+                      </small> */}
 
+                      {/* DESCRIPTION */}
+                      {it.description && (
+                        <p
+                          className="small text-secondary mb-2"
+                          style={{
+                            overflow: "hidden",
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                          }}
+                          title={it.description}
+                        >
+                          {it.description}
+                        </p>
+                      )}
                       <button
                         className="btn btn-sm btn-outline-danger w-100"
                         onClick={async () => {
