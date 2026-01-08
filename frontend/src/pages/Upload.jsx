@@ -36,6 +36,7 @@ export default function Upload() {
         createdAt: r.created_at || r.created_at || null,
         uploadedBy: r.uploadedBy,
         description: r.description,
+        category: r.category || "uncategorized",
       }));
       setItems(normalized);
     } catch (err) {
@@ -350,7 +351,7 @@ export default function Upload() {
           ))}
         </div>
       </section> */}
-      <section className="container mt-5">
+      {/* <section className="container mt-5">
         <h4 className="fw-semibold mb-3">Uploaded Items</h4>
 
         {loading && <div className="text-muted">Loading list...</div>}
@@ -423,6 +424,73 @@ export default function Upload() {
             </div>
           ))}
         </div>
+      </section> */}
+      <section className="container mt-5">
+        <h4 className="fw-semibold mb-4">Uploaded Items</h4>
+
+        {Object.keys(groupedItems).length === 0 && (
+          <div className="text-muted">No uploaded items found.</div>
+        )}
+
+        {Object.entries(groupedItems).map(([category, items]) => (
+          <div key={category} className="mb-5">
+            {/* CATEGORY TITLE */}
+            <h5 className="fw-bold text-primary text-capitalize mb-3">
+              {category}
+            </h5>
+
+            <div className="row g-3">
+              {items.map((it) => (
+                <div key={it._id} className="col-6 col-md-4 col-lg-3">
+                  <div className="card h-100 shadow-sm border-0">
+                    {it.resource_type?.startsWith("image") ? (
+                      <img
+                        src={it.url}
+                        alt={it.public_id}
+                        className="card-img-top"
+                        style={{ height: "160px", objectFit: "cover" }}
+                      />
+                    ) : (
+                      <div
+                        className="d-flex align-items-center justify-content-center"
+                        style={{ height: "160px" }}
+                      >
+                        {it.format}
+                      </div>
+                    )}
+
+                    <div className="card-body p-2">
+                      <small className="text-muted d-block mb-2">
+                        {new Date(it.createdAt).toLocaleString()}
+                      </small>
+
+                      <button
+                        className="btn btn-sm btn-outline-danger w-100"
+                        onClick={async () => {
+                          if (!confirm("Delete this item?")) return;
+                          try {
+                            setLoading(true);
+                            await fetch(
+                              `${API}/api/media?public_id=${encodeURIComponent(
+                                it.public_id
+                              )}`,
+                              { method: "DELETE" }
+                            );
+                            fetchList();
+                          } finally {
+                            setLoading(false);
+                          }
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </section>
     </div>
   );
