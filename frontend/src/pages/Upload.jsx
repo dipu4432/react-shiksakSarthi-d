@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { getToken, authFetch } from "../lib/auth";
 
 const API = import.meta.env.VITE_API_URL; // || 'https://react-shiksak-sarthi-d.vercel.app'
@@ -11,6 +12,7 @@ export default function Upload() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchList();
@@ -52,11 +54,11 @@ export default function Upload() {
     e.preventDefault();
     if (!files.length) return setMessage("Please choose at least one file");
 
-  //   const token = getToken();
-  // if (!token) {
-  //   setMessage("You are not logged in. Please login again.");
-  //   return;
-  // }
+    //   const token = getToken();
+    // if (!token) {
+    //   setMessage("You are not logged in. Please login again.");
+    //   return;
+    // }
 
     const fd = new FormData();
     files.forEach((f) => fd.append("file", f));
@@ -99,12 +101,11 @@ export default function Upload() {
   }
 
   const groupedItems = items.reduce((acc, item) => {
-  const cat = item.category || "uncategorized";
-  if (!acc[cat]) acc[cat] = [];
-  acc[cat].push(item);
-  return acc;
-}, {});
-
+    const cat = item.category || "uncategorized";
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(item);
+    return acc;
+  }, {});
 
   return (
     <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -261,7 +262,9 @@ export default function Upload() {
 
                       // use authFetch to include Authorization header if token present
                       const dres = await fetch(
-                        `${API}/api/media?public_id=${encodeURIComponent(it.public_id)}`,
+                        `${API}/api/media?public_id=${encodeURIComponent(
+                          it.public_id
+                        )}`,
                         {
                           method: "DELETE",
                           // headers: token
@@ -293,6 +296,13 @@ export default function Upload() {
           ))}
         </div>
       </section>
+      <span
+        onClick={() => navigate("/")}
+        className="text-warning fw-semibold"
+        style={{ cursor: "pointer" }}
+      >
+        &larr; Back to Home
+      </span>
     </div>
   );
 }
