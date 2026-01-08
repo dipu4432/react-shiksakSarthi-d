@@ -232,7 +232,7 @@ export default function Upload() {
             <div className="text-center mt-3">
               <button
                 onClick={() => navigate("/")}
-                className="btn fw-semibold p-0 mt-2 text-secondary link-warning"
+                className="btn fw-semibold p-0 text-warning text-md-secondary link-warning"
               >
                 &larr; Back to Home
               </button>
