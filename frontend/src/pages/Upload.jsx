@@ -108,9 +108,9 @@ export default function Upload() {
   }, {});
 
   return (
-    <div className="text-bg-light">
+    <div className="bg-light py-4">
       {/* <h2 className="text-center fw-bold m-4">UPLOAD FILES</h2> */}
-      <h2 className="text-center fw-semibold mt-4 mb-4 text-primary">
+      <h2 className="text-center fw-semibold mt-2 mb-4 text-primary">
         UPLOAD FILES
       </h2>
       <div className="container d-flex justify-content-center mb-4">
@@ -229,13 +229,21 @@ export default function Upload() {
               </div>
               {message && <div>{message}</div>}
             </form>
-            {/* {message && <div style={{ marginBottom: 12 }}>{message}</div>} */}
+            <div className="text-center mt-3">
+              <button
+                onClick={() => navigate("/")}
+                className="btn fw-semibold p-0 mt-2 text-secondary link-warning"
+              >
+                &larr; Back to Home
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      <section>
-        <h3 className="mt-4">Uploaded items</h3>
+      {/*
+      <section className="container mt-5">
+        <h4 className="fw-semibold mb-3">Uploaded items</h4>
         {loading && <div>Loading list...</div>}
         {!loading && items.length === 0 && <div>No uploaded items found.</div>}
         <div
@@ -265,8 +273,8 @@ export default function Upload() {
                 >
                   {it.format || it.resource_type}
                 </div>
-              )}
-              {/* {it.description && (
+              )}*/}
+      {/* {it.description && (
                 <div
                   style={{
                     position: "absolute",
@@ -285,9 +293,9 @@ export default function Upload() {
                   {it.description}
                 </div>
               )} */}
-              <div style={{ fontSize: 12, marginTop: 6 }}>
-                {/* {new Date(it.createdAt).toLocaleString()} */}
-                {new Date(it.createdAt).toLocaleString("en-US", {
+      {/* <div style={{ fontSize: 12, marginTop: 6 }}> */}
+      {/* {new Date(it.createdAt).toLocaleString()} */}
+      {/*  {new Date(it.createdAt).toLocaleString("en-US", {
                   year: "numeric",
                   month: "2-digit",
                   day: "2-digit",
@@ -341,14 +349,81 @@ export default function Upload() {
             </div>
           ))}
         </div>
+      </section> */}
+      <section className="container mt-5">
+        <h4 className="fw-semibold mb-3">Uploaded Items</h4>
+
+        {loading && <div className="text-muted">Loading list...</div>}
+        {!loading && items.length === 0 && (
+          <div className="text-muted">No uploaded items found.</div>
+        )}
+
+        <div className="row g-3">
+          {items.map((it) => (
+            <div key={it._id} className="col-6 col-md-4 col-lg-3">
+              <div className="card h-100 shadow-sm border-0">
+                {it.resource_type?.startsWith("image") ? (
+                  <img
+                    src={it.url}
+                    alt={it.public_id || it._id}
+                    className="card-img-top"
+                    style={{ height: "160px", objectFit: "cover" }}
+                  />
+                ) : (
+                  <div
+                    className="d-flex align-items-center justify-content-center"
+                    style={{ height: "160px" }}
+                  >
+                    {it.format || it.resource_type}
+                  </div>
+                )}
+
+                <div className="card-body p-2">
+                  <small className="text-muted d-block mb-2">
+                    {new Date(it.createdAt).toLocaleString("en-US", {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
+                      hour: "numeric",
+                      minute: "2-digit",
+                      hour12: true,
+                    })}
+                  </small>
+
+                  <button
+                    className="btn btn-sm btn-outline-danger w-100"
+                    onClick={async () => {
+                      if (!confirm("Delete this item?")) return;
+                      try {
+                        setLoading(true);
+                        const dres = await fetch(
+                          `${API}/api/media?public_id=${encodeURIComponent(
+                            it.public_id
+                          )}`,
+                          { method: "DELETE" }
+                        );
+                        const djson = await dres.json();
+                        if (!dres.ok)
+                          setMessage(djson.message || "Delete failed");
+                        else {
+                          setMessage("Deleted successfully");
+                          fetchList();
+                        }
+                      } catch {
+                        setMessage("Delete error");
+                      } finally {
+                        setLoading(false);
+                      }
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
-      <span
-        onClick={() => navigate("/")}
-        className="text-warning fw-semibold"
-        style={{ cursor: "pointer" }}
-      >
-        &larr; Back to Home
-      </span>
     </div>
   );
 }
