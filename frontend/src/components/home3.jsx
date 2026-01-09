@@ -32,7 +32,7 @@ const Home3 = () => {
   async function fetchImages() {
     try {
       setLoading(true);
-      const res = await fetch(`${API}/api/media`);
+      const res = await fetch(`${API}/api/media?category=kitchen`);
       const data = await res.json();
 
       const uploadedImages = data.items.map((item) => ({
