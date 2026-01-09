@@ -78,8 +78,8 @@ const Home3 = () => {
   const goToSlide = (i) => setStartIndex(i);
   
   return (
-    <div className="container bg-dark-subtle text-center py-5">
-      <h2 className="fw-semibold mb-2">Smart Modular Kitchen Designs</h2>
+    <div className="container bg-dark-subtle text-center py-4 mt-3">
+      <h2 className="fw-semibold mb-4">Smart Modular Kitchen Designs</h2>
       {/* <p className="text-muted mb-4">1 Cities | 10 Experience Centres</p> */}
 
       {loading && <div>Loading images...</div>}

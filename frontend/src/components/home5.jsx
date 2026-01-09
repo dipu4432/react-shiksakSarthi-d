@@ -7,7 +7,7 @@ import image6 from "/image6.png";
 
 const Home5 = () => {
   return (
-    <div className="container py-5">
+    <div className="container py-4">
       <div className="text-center mb-5">
         <h2>What You Get</h2>
       </div>

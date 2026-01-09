@@ -77,8 +77,8 @@ export default function BedRoomInteriors() {
     const goToSlide = (i) => setStartIndex(i);
 
   return (
-    <div className="container text-center py-5">
-      <h2 className="fw-semibold mb-2">Bedroom Interiors For Comfort And Style</h2>
+    <div className="container text-center mt-3">
+      <h2 className="fw-semibold mb-4">Bedroom Interiors For Comfort And Style</h2>
       {/* <p className="text-muted mb-4">1 Cities | 10 Experience Centres</p> */}
 
       {loading && <div>Loading images...</div>}
@@ -140,7 +140,7 @@ export default function BedRoomInteriors() {
 
       {/* DOTS — MOBILE ONLY */}
       {visibleCount === 1 && images.length > 0 && (
-        <div className="d-flex justify-content-center mt-3 gap-2">
+        <div className="d-flex justify-content-center mt-2 gap-2">
           {images.map((_, i) => (
             <div
               key={i}

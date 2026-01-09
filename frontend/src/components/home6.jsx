@@ -5,7 +5,7 @@ import family2 from "/family2.jpg";
 
 const Home6 = () => {
   return (
-    <div className="bg-dark-subtle py-5">
+    <div className="bg-dark-subtle py-4">
       <div className="container">
         <h2 className="text-center fw-semibold mb-5">15000+ Happy Homes</h2>
 
@@ -80,7 +80,7 @@ const Home6 = () => {
           </div>
         </div>
 
-        <div className="text-center mt-5">
+        <div className="text-center mt-4">
           <button className="btn btn-danger px-4 py-2 shadow">
             Book A Free Consultation
           </button>

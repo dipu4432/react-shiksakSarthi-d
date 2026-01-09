@@ -84,8 +84,8 @@ export default function Home7() {
   const goToSlide = (i) => setStartIndex(i);
 
   return (
-    <div className="container text-center py-5">
-      <h2 className="fw-semibold">
+    <div className="container text-center">
+      <h2 className="fw-semibold mt-4">
         51040 Design Possibilities In Our Experience Centres
       </h2>
       <p className="text-muted mb-4">1 Cities | 10 Experience Centres</p>
