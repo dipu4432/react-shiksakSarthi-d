@@ -1,20 +1,6 @@
 import { useState, useEffect } from "react";
 import "./image.css";
 
-// import img1 from '/img1.jpg';
-// import img2 from '/img2.jpg';
-// import img3 from '/img3.jpg';
-// import img4 from '/hero.jpg';
-
-
-// Slide Data — Image + Text
-// const slides = [
-//   { img: img1, title: "Skirting Drawers To Utilise The Dead Space" },
-//   { img: img2, title: "A TV Unit With Hidden Storage Behind" },
-//   { img: img3, title: "A Magic Pull-Out To Store Your Daily Utensils" },
-//   { img: img4, title: "Maximise Your Modular Kitchen Storage" },
-// ];
-
 const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d.vercel.app/";
 
 const Home3 = () => {
@@ -131,7 +117,7 @@ const Home3 = () => {
                 />
               </div> */}
               <div className="image-box">
-                  <img src={img.url} className="img-fluid shadow-sm" alt="Uploaded" />
+                  <img src={img.url} className="image-full" alt="Uploaded" />
                 </div>
 
                 {/* DESCRIPTION */}

@@ -1,18 +1,15 @@
 .image-box {
   width: 100%;
-  aspect-ratio: 4 / 3;     /* same card size */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f2f2f2; /* empty space color */
+  height: 280px;
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.image-box img {
+/* IMAGE FIT FIX */
+.image-full {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;   
   display: block;
 }

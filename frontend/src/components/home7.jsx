@@ -1,15 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./image.css";
 
-// import img1 from "/colours-kitchen-img/colours-kitchen.jpg";
-// import img2 from "/colours-kitchen-img/colours-kitchen1.jpg";
-// import img3 from "/colours-kitchen-img/colours-kitchen2.jpg";
-// import img4 from "/colours-kitchen-img/colours-kitchen3.jpg";
-// import img5 from "/colours-kitchen-img/colours-kitchen4.jpg";
-
-// All real images (do NOT repeat them here)
-// const images = [img1, img2, img3, img4, img5];
-
 const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d.vercel.app/";
 
 export default function Home7() {
@@ -21,8 +12,8 @@ export default function Home7() {
 
 
   useEffect(() => {
-    if (fetchedRef.current) return;   // ⛔ prevent second call
-  fetchedRef.current = true;        // ✅ mark as fetched
+    if (fetchedRef.current) return;   // prevent second call
+  fetchedRef.current = true;        //  mark as fetched
     fetchImages();
   }, []);
 
@@ -132,7 +123,7 @@ export default function Home7() {
                   alt="Uploaded"
                 /> */}
                 <div className="image-box">
-                  <img src={img.url} className="img-fluid shadow-sm" alt="Uploaded" />
+                  <img src={img.url} className="image-full" alt="Uploaded" />
                 </div>
 
                 {/* DESCRIPTION */}

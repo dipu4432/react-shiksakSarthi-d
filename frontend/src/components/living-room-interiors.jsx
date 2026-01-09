@@ -1,21 +1,6 @@
 import { useState, useEffect } from "react";
 import "./image.css";
 
-// import img1 from "/colours-kitchen-img/colours-kitchen.jpg";
-// import img2 from "/colours-kitchen-img/colours-kitchen1.jpg";
-// import img3 from "/colours-kitchen-img/colours-kitchen2.jpg";
-// import img4 from "/colours-kitchen-img/colours-kitchen3.jpg";
-// import img5 from "/colours-kitchen-img/colours-kitchen4.jpg";
-
-// // Slide Data — Image + Text
-// const slides = [
-//   { img: img1, title: "Skirting Drawers To Utilise The Dead Space" },
-//   { img: img2, title: "A TV Unit With Hidden Storage Behind" },
-//   { img: img3, title: "A Magic Pull-Out To Store Your Daily Utensils" },
-//   { img: img4, title: "Maximise Your Modular Kitchen Storage" },
-//   { img: img5, title: "Smart Interior Solutions For Your Home" }
-// ];
-
 const API = import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d.vercel.app/";
 
 export default function LivingRoomInteriors() {
@@ -131,7 +116,7 @@ export default function LivingRoomInteriors() {
                 />
               </div> */}
               <div className="image-box">
-                  <img src={img.url} className="img-fluid shadow-sm" alt="Uploaded" />
+                  <img src={img.url} className="image-full" alt="Uploaded" />
                 </div>
 
                 {/* DESCRIPTION */}
