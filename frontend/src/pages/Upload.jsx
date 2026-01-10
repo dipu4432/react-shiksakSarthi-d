@@ -47,8 +47,23 @@ export default function Upload() {
     }
   }
 
+  // function onFileChange(e) {
+  //   setFiles(Array.from(e.target.files || []));
+  // }
+
   function onFileChange(e) {
-    setFiles(Array.from(e.target.files || []));
+    const selectedFiles = Array.from(e.target.files || []);
+
+    // MODIFIED: optional size limit (50MB)
+    const MAX_SIZE = 50 * 1024 * 1024;
+
+    const validFiles = selectedFiles.filter((file) => file.size <= MAX_SIZE);
+
+    if (validFiles.length !== selectedFiles.length) {
+      setMessage("Some files exceeded 50MB and were skipped"); // MODIFIED
+    }
+
+    setFiles(validFiles);
   }
 
   async function onSubmit(e) {
@@ -426,7 +441,9 @@ export default function Upload() {
         </div>
       </section> */}
       <section className="container mt-5">
-        <h4 className="text-center fw-semibold mt-2 mb-4 text-primary">UPLOADED ITEMS</h4>
+        <h4 className="text-center fw-semibold mt-2 mb-4 text-primary">
+          UPLOADED ITEMS
+        </h4>
 
         {Object.keys(groupedItems).length === 0 && (
           <div className="text-muted">No uploaded items found.</div>
@@ -443,7 +460,7 @@ export default function Upload() {
               {items.map((it) => (
                 <div key={it._id} className="col-6 col-md-4 col-lg-3">
                   <div className="card h-100 shadow-sm border-0">
-                    {it.resource_type?.startsWith("image") ? (
+                    {/* {it.resource_type?.startsWith("image") ? (
                       <img
                         src={it.url}
                         alt={it.public_id}
@@ -457,7 +474,30 @@ export default function Upload() {
                       >
                         {it.format}
                       </div>
-                    )}
+                    )} */}
+                    {it.resource_type?.startsWith("image") ? (
+  <img
+    src={it.url}
+    alt={it.public_id}
+    className="card-img-top"
+    style={{ height: "160px", objectFit: "cover" }}
+  />
+) : it.resource_type === "video" ? ( // MODIFIED
+  <video
+    src={it.url}
+    controls // MODIFIED
+    className="card-img-top"
+    style={{ height: "160px", objectFit: "cover" }}
+  />
+) : (
+  <div
+    className="d-flex align-items-center justify-content-center"
+    style={{ height: "160px" }}
+  >
+    {it.format}
+  </div>
+)}
+
 
                     <div className="card-body p-2">
                       {/* <small className="text-muted d-block mb-2">
