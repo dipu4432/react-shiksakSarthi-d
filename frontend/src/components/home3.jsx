@@ -87,56 +87,59 @@ const Home3 = () => {
 
     
       {images.length > 0 && (
-        <div className="position-relative">
-          {/* LEFT BUTTON */}
-          <button
-            onClick={prev}
-            className="btn btn-light shadow rounded-circle position-absolute top-50 start-0 translate-middle-y"
-            style={{ zIndex: 10 }}
+  <>
+    {/* IMAGE + BUTTON AREA */}
+    <div className="position-relative">
+
+      {/* LEFT BUTTON */}
+      <button
+        onClick={prev}
+        className="btn btn-light shadow rounded-circle position-absolute top-50 start-0 translate-middle-y"
+        style={{ zIndex: 10 }}
+      >
+        ❮
+      </button>
+
+      {/* SLIDER (IMAGES ONLY) */}
+      <div className="d-flex justify-content-center gap-3">
+        {visibleImages.map((img) => (
+          <div
+            key={img.id}
+            style={{ width: visibleCount === 1 ? "90%" : "30%" }}
           >
-            ❮
-          </button>
-
-          {/* SLIDER */}
-          <div className="d-flex justify-content-center gap-3">
-            {visibleImages.map((img, i) => (
-              <div
-                key={img.id}
-                style={{ width: visibleCount === 1 ? "90%" : "30%" }}
-              >
-                {/* <img
-                  src={img.url}
-                  className="img-fluid shadow-sm p-2"
-                  style={{
-                    borderRadius: "15px",
-                    width: "100%",
-                    height: "auto",
-                    objectFit: "cover",
-                  }}
-                  alt="Uploaded"
-                />
-              </div> */}
-              <div className="image-box">
-                  <img src={img.url} className="image-full" alt="Uploaded" />
-                </div>
-
-                {/* DESCRIPTION */}
-
-                <p className="mt-2 text-muted">{img.description}</p>
-              </div>
-            ))}
+            <div className="image-box">
+              <img src={img.url} className="image-full" alt="Uploaded" />
+            </div>
           </div>
+        ))}
+      </div>
 
-          {/* RIGHT BUTTON */}
-          <button
-            onClick={next}
-            className="btn btn-light shadow rounded-circle position-absolute top-50 end-0 translate-middle-y"
-            style={{ zIndex: 10 }}
-          >
-            ❯
-          </button>
-        </div>
-      )}
+      {/* RIGHT BUTTON */}
+      <button
+        onClick={next}
+        className="btn btn-light shadow rounded-circle position-absolute top-50 end-0 translate-middle-y"
+        style={{ zIndex: 10 }}
+      >
+        ❯
+      </button>
+
+    </div>
+
+    {/* DESCRIPTION (OUTSIDE) */}
+    <div className="d-flex justify-content-center gap-3 mt-2">
+      {visibleImages.map((img) => (
+        <p
+          key={img.id}
+          className="mt-2 text-muted text-center"
+          style={{ width: visibleCount === 1 ? "90%" : "30%" }}
+        >
+          {img.description}
+        </p>
+      ))}
+    </div>
+  </>
+)}
+
 
       {/* DOTS — MOBILE ONLY */}
       {visibleCount === 1 && images.length > 0 && (
@@ -150,7 +153,7 @@ const Home3 = () => {
                 height: i === startIndex ? "12px" : "10px",
                 borderRadius: "50%",
                 backgroundColor:
-                  i === startIndex ? "#6c757d" : "#d3d3d3",
+                  i === startIndex ? "#6c757d" : "#e9ecef",
                 cursor: "pointer",
                 transition: "0.3s",
               }}
