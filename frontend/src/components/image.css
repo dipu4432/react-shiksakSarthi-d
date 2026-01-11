@@ -13,3 +13,12 @@
   object-fit: cover;   
   display: block;
 }
+
+/* Fix navbar wrap at 320px */
+@media (max-width: 360px) {
+  .navbar-brand {
+    font-size: 24px !important;
+    white-space: nowrap;
+  }
+}
+
