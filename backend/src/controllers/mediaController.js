@@ -6,7 +6,7 @@ const ALLOWED_CATEGORIES = ['kitchen', 'bedroom', 'livingroom', 'bathroom'];
 
 // Uploads one or multiple files (multer memoryStorage) to Cloudinary
 exports.upload = async (req, res, next) => {
-  // console.log("🔥 UPLOAD CONTROLLER HIT 🔥");
+  // console.log(" UPLOAD CONTROLLER HIT ");
   // Normalize category from frontend
 const rawCategory = req.body.category;
 
@@ -31,7 +31,7 @@ const normalizedCategory = rawCategory
 
       const uploadSingle = (file) =>
         new Promise((resolve, reject) => {
-          const stream = cloudinary.uploader.upload_stream({ folder: `siksha/${category}` }, async (error, result) => {
+          const stream = cloudinary.uploader.upload_stream({ folder: `siksha/${category}`, resource_type: "auto", }, async (error, result) => {
             if (error) return reject(error);
             try {
               // Build MongoDB document data
