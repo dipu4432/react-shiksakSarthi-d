@@ -31,7 +31,7 @@ const normalizedCategory = rawCategory
 
       const uploadSingle = (file) =>
         new Promise((resolve, reject) => {
-          const stream = cloudinary.uploader.upload_stream({ folder: `siksha/${category}`, resource_type: "auto", }, async (error, result) => {
+          const stream = cloudinary.uploader.upload_stream({ folder: `siksha/${category}` }, async (error, result) => {
             if (error) return reject(error);
             try {
               // Build MongoDB document data
