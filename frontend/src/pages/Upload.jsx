@@ -126,6 +126,7 @@ export default function Upload() {
                 <label className="form-label fw-semibold">Upload Images</label>
                 <input
                   type="file"
+                  accept="image/*"
                   multiple
                   onChange={onFileChange}
                   className="form-control"
