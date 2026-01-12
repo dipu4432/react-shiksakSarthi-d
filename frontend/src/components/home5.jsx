@@ -8,7 +8,7 @@ import image6 from "/image6.png";
 const Home5 = () => {
   return (
     <div className="container py-4">
-      <div className="text-center mb-5">
+      <div className="text-center mb-4">
         <h2>What You Get</h2>
       </div>
       <div className="row g-4">
@@ -16,7 +16,7 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image1} alt="Icon" width={95} className="me-3" />
           <div>
-            <h6 className="fw-bold">Innovative Storage</h6>
+            <h5>Innovative Storage</h5>
             <p className="mb-0">
               TV Unit, TV Back Panelling, Crockery Unit, Bar Unit, Bookshelf.
             </p>
@@ -26,7 +26,7 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image2} alt="Icon" width={95} className="me-3" />
           <div>
-            <h6 className="fw-bold">Bedroom</h6>
+            <h5>Bedroom</h5>
             <p className="mb-0">
               Wardrobes, TV Unit, Bed with Storage, Dressing Unit, Study Unit.
             </p>
@@ -36,7 +36,7 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image3} alt="Icon" width={95} className="me-3" />
           <div>
-            <h6 className="fw-bold">Kitchen</h6>
+            <h5>Kitchen</h5>
             <p className="mb-0">
               Countertops, Backsplashes, Accessories, Shutters, Storage.
             </p>
@@ -47,7 +47,7 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image4} alt="Icon" width={95} className="me-3" />
           <div>
-            <h6 className="fw-bold">Innovative Storage</h6>
+            <h5>Innovative Storage</h5>
             <p className="mb-0">
               Janitor Unit, Skirting Drawer, Pantry Pull Out, Appliance Garage,
               Hidden Bar Cabinet, Magic Corner.
@@ -59,7 +59,7 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image5} alt="Icon" width={95} className="me-3" />
           <div>
-            <h6 className="fw-bold">Interior Design Services</h6>
+            <h5>Interior Design Services</h5>
             <p className="mb-0">
               False Ceiling, Wall Panelling, Decor Accents, Lighting,
               Furnishing, Appliances.
@@ -71,7 +71,7 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image6} alt="Icon" width={95} className="me-3" />
           <div>
-            <h6 className="fw-bold">Home Improvement Services</h6>
+            <h5>Home Improvement Services</h5>
             <p className="mb-0">
               Painting, Bathroom Remodelling, Tiling, Plumbing, Electrical,
               Civil Work, Deep Cleaning.
