@@ -224,7 +224,7 @@ const Navigation = ({ onQuoteClick }) => {
         </div>
 
         <div className="offcanvas-body">
-          <ul className="navbar-nav gap-3">
+          <ul className="navbar-nav gap-0.5">
 
             <li className="nav-item">
               <Link className="nav-link" to="/" data-bs-dismiss="offcanvas">
