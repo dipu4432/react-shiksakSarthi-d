@@ -35,7 +35,7 @@ export default function Home7() {
   async function fetchImages() {
     try {
       setLoading(true);
-      const res = await fetch(`${API}/api/media?category=livingroom`);
+      const res = await fetch(`${API}/api/media`);
       const data = await res.json();
 
       console.log("API DATA", data); // debug
@@ -80,8 +80,27 @@ export default function Home7() {
     (_, i) => images[(startIndex + i) % images.length]
   );
 
+  // -------- RELATIVE DOT LOGIC (SLIDING WINDOW) --------
+  const MAX_DOTS = 5;
+
+  // base index for current dot window
+  const dotWindowStart = Math.floor(startIndex / MAX_DOTS) * MAX_DOTS;
+
+  // dots always 0–4 (or less if images < 5)
+  const visibleDots = Array.from(
+    { length: Math.min(MAX_DOTS, images.length - dotWindowStart) },
+    (_, i) => i
+  );
+
+  // active dot is RELATIVE
+  const activeDot = startIndex - dotWindowStart;
+
   // Change slide by clicking dot
-  const goToSlide = (i) => setStartIndex(i);
+  // const goToSlide = (i) => setStartIndex(i);
+
+  const goToSlide = (dotIndex) => {
+    setStartIndex(dotWindowStart + dotIndex);
+  };
 
   return (
     <div className="container text-center">
@@ -145,7 +164,7 @@ export default function Home7() {
         </>
       )}
 
-      {/* DOTS — MOBILE ONLY */}
+      {/* DOTS — MOBILE ONLY
       {visibleCount === 1 && images.length > 0 && (
         <div className="d-flex justify-content-center mt-2 gap-2">
           {images.map((_, i) => (
@@ -157,6 +176,25 @@ export default function Home7() {
                 height: i === startIndex ? "12px" : "10px",
                 borderRadius: "50%",
                 backgroundColor: i === startIndex ? "#6c757d" : "#d3d3d3",
+                cursor: "pointer",
+                transition: "0.3s",
+              }}
+            />
+          ))}
+        </div>
+      )} */}
+      {/* DOTS — MOBILE ONLY */}
+      {visibleCount === 1 && images.length > 0 && (
+        <div className="d-flex justify-content-center mt-2 gap-2">
+          {visibleDots.map((_, i) => (
+            <div
+              key={i}
+              onClick={() => goToSlide(i)}
+              style={{
+                width: i === activeDot ? "12px" : "10px",
+                height: i === activeDot ? "12px" : "10px",
+                borderRadius: "50%",
+                backgroundColor: i === activeDot ? "#6c757d" : "#d3d3d3",
                 cursor: "pointer",
                 transition: "0.3s",
               }}
