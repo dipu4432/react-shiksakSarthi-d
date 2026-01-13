@@ -31,7 +31,9 @@ const Home = () => {
       <Home4a />
       <Home4b />
       <Home4c />
-      <Home5 />
+      <div id="services">
+        <Home5 />
+      </div>
       <Home6 />
       <Home7 />
       <Home8 />

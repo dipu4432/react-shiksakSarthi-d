@@ -124,16 +124,27 @@
 // };
 
 // export default Navigation;
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
+
 import "./image.css";
 
 const Navigation = ({ onQuoteClick }) => {
+
+  const navigate = useNavigate();
   const gradientTextStyle = {
     fontSize: "40px",
     background: "radial-gradient(circle, red, yellow)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+  };
+
+  const goToServices = () => {
+    navigate("/");
+    setTimeout(() => {
+      const el = document.getElementById("services");
+      el?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
   };
 
   return (
@@ -142,9 +153,12 @@ const Navigation = ({ onQuoteClick }) => {
       {/* navbar-expand-lg → ONLY desktop shows horizontal menu */}
       <nav className="navbar navbar-expand-lg bg-white shadow-sm px-3">
         <div className="container-fluid">
-
           {/* BRAND */}
-          <Link className="navbar-brand fw-bold py-4" to="/" style={gradientTextStyle}>
+          <Link
+            className="navbar-brand fw-bold py-4"
+            to="/"
+            style={gradientTextStyle}
+          >
             Colors Kitchen
           </Link>
 
@@ -162,21 +176,35 @@ const Navigation = ({ onQuoteClick }) => {
           {/* DESKTOP MENU ONLY */}
           <div className="collapse navbar-collapse d-none d-lg-flex">
             <ul className="navbar-nav ms-auto align-items-center gap-4 flex-nowrap">
-
               <li className="nav-item">
-                <Link className="nav-link" to="/">HOME</Link>
+                <Link className="nav-link" to="/">
+                  HOME
+                </Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/about">ABOUT</Link>
+                <Link className="nav-link" to="/about">
+                  ABOUT
+                </Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/project">PROJECT</Link>
+                <Link className="nav-link" to="/project">
+                  PROJECT
+                </Link>
               </li>
 
+              {/* <li className="nav-item">
+                <Link className="nav-link" to="/home5">SERVICES</Link>
+              </li> */}
+
               <li className="nav-item">
-                <Link className="nav-link" to="/services">SERVICES</Link>
+                <button
+                  className="nav-link btn btn-link"
+                  onClick={goToServices}
+                >
+                  SERVICES
+                </button>
               </li>
 
               <li className="nav-item">
@@ -199,7 +227,6 @@ const Navigation = ({ onQuoteClick }) => {
                   Get Free Quote
                 </button>
               </li>
-
             </ul>
           </div>
         </div>
@@ -225,7 +252,6 @@ const Navigation = ({ onQuoteClick }) => {
 
         <div className="offcanvas-body">
           <ul className="navbar-nav gap-0.5">
-
             <li className="nav-item">
               <Link className="nav-link" to="/" data-bs-dismiss="offcanvas">
                 HOME
@@ -233,21 +259,42 @@ const Navigation = ({ onQuoteClick }) => {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/about" data-bs-dismiss="offcanvas">
+              <Link
+                className="nav-link"
+                to="/about"
+                data-bs-dismiss="offcanvas"
+              >
                 ABOUT
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/project" data-bs-dismiss="offcanvas">
+              <Link
+                className="nav-link"
+                to="/project"
+                data-bs-dismiss="offcanvas"
+              >
                 PROJECT
               </Link>
             </li>
 
-            <li className="nav-item">
-              <Link className="nav-link" to="/services" data-bs-dismiss="offcanvas">
+            {/* <li className="nav-item">
+              <Link
+                className="nav-link"
+                to="/home5"
+                data-bs-dismiss="offcanvas"
+              >
                 SERVICES
               </Link>
+            </li> */}
+            <li className="nav-item">
+              <button
+                className="nav-link btn btn-link"
+                onClick={goToServices}
+                data-bs-dismiss="offcanvas"
+              >
+                SERVICES
+              </button>
             </li>
 
             <li className="nav-item">
@@ -271,7 +318,6 @@ const Navigation = ({ onQuoteClick }) => {
                 Get Free Quote
               </button>
             </li>
-
           </ul>
         </div>
       </div>
