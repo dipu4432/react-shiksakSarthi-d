@@ -8,7 +8,7 @@ const Home2 = () => {
     <div className="container text-center mt-5">
       <h2>Why Choose Colours Kitchen Homes ?</h2>
 
-      <div className="row mt-4 gy-4">
+      <div className="row m-4 gy-4">
         
         <div className="col-6 col-md-3">
           <img src={interior1} width={100} height={100} alt="Design Possibilities" />
