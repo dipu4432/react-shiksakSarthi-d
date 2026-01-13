@@ -1,5 +1,5 @@
 import Home2 from "./home2";
-import Home3 from "./home3";
+// import Home3 from "./home3";
 import Home4a from "./kitchen-design";
 import Home4b from "./bedroom-interiors";
 import Home4c from "./living-room-interiors";
@@ -27,7 +27,7 @@ const Home = () => {
       /> */}
       <HomeBanner />
       <Home2 />
-      <Home3 />
+      {/* <Home3 /> */}
       <Home4a />
       <Home4b />
       <Home4c />
