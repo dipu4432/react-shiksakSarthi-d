@@ -7,7 +7,7 @@ import image6 from "/image6.png";
 
 const Home5 = () => {
   return (
-    <div className="container py-4">
+    <div id="services" className="container py-4">
       <div className="text-center mb-4">
         <h2>What You Get</h2>
       </div>
@@ -16,8 +16,8 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image1} alt="Icon" width={95} className="me-3" />
           <div>
-            <h5>Innovative Storage</h5>
-            <p className="mb-0">
+            <h6>Innovative Storage</h6>
+            <p className="mb-0 small">
               TV Unit, TV Back Panelling, Crockery Unit, Bar Unit, Bookshelf.
             </p>
           </div>
@@ -26,18 +26,18 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image2} alt="Icon" width={95} className="me-3" />
           <div>
-            <h5>Bedroom</h5>
-            <p className="mb-0">
+            <h6>Bedroom</h6>
+            <p className="mb-0 small">
               Wardrobes, TV Unit, Bed with Storage, Dressing Unit, Study Unit.
             </p>
           </div>
         </div>
         {/* 3 — Kitchen */}
         <div className="col-12 col-md-6 col-lg-4 d-flex">
-          <img src={image3} alt="Icon" width={95} className="me-3" />
+          <img src={image3} alt="Icon" width={95} style={{marginRight: "2rem"}} />
           <div>
-            <h5>Kitchen</h5>
-            <p className="mb-0">
+            <h6>Kitchen</h6>
+            <p className="mb-0 small">
               Countertops, Backsplashes, Accessories, Shutters, Storage.
             </p>
           </div>
@@ -45,10 +45,10 @@ const Home5 = () => {
 
         {/* 4 — Innovative Storage 2 */}
         <div className="col-12 col-md-6 col-lg-4 d-flex">
-          <img src={image4} alt="Icon" width={95} className="me-3" />
+          <img src={image4} alt="Icon" width={95} className="me-4" />
           <div>
-            <h5>Innovative Storage</h5>
-            <p className="mb-0">
+            <h6>Innovative Storage</h6>
+            <p className="mb-0 small">
               Janitor Unit, Skirting Drawer, Pantry Pull Out, Appliance Garage,
               Hidden Bar Cabinet, Magic Corner.
             </p>
@@ -59,8 +59,8 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image5} alt="Icon" width={95} className="me-3" />
           <div>
-            <h5>Interior Design Services</h5>
-            <p className="mb-0">
+            <h6>Interior Design Services</h6>
+            <p className="mb-0 small">
               False Ceiling, Wall Panelling, Decor Accents, Lighting,
               Furnishing, Appliances.
             </p>
@@ -71,8 +71,8 @@ const Home5 = () => {
         <div className="col-12 col-md-6 col-lg-4 d-flex">
           <img src={image6} alt="Icon" width={95} className="me-3" />
           <div>
-            <h5>Home Improvement Services</h5>
-            <p className="mb-0">
+            <h6>Home Improvement Services</h6>
+            <p className="mb-0 small">
               Painting, Bathroom Remodelling, Tiling, Plumbing, Electrical,
               Civil Work, Deep Cleaning.
             </p>
