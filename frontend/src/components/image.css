@@ -15,10 +15,21 @@
 }
 
 /* Fix navbar wrap at 320px */
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
   .navbar-brand {
     font-size: 24px !important;
     white-space: nowrap;
   }
+} */
+
+.navbar-brand img {
+  max-height: 100px;
 }
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    max-height: 75px;
+  }
+}
+
 

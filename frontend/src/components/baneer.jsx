@@ -47,7 +47,7 @@ const HalfOverlayImage = () => {
         </div>
 
         <p className="validity">
-          Offer valid until <b>31st December, 2025</b>
+          Offer valid until <b>31st March, 2026</b>
         </p>
         
       </div>

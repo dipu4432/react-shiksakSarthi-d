@@ -5,7 +5,7 @@
 .image-wrapper {
   position: relative;
   width: 100%;
-  height: 75vh;
+  height: 80vh;
   overflow: hidden;
 }
 
@@ -33,7 +33,7 @@
 }
 
 /* DESKTOP TEXT POSITION */
-.banner-text {
+/* .banner-text {
   position: absolute;
   top: 20%;
   right: 12%;
@@ -41,19 +41,34 @@
   z-index: 5;
   color: #47210E;
   text-align: center;
+} */
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+
+  width: 100%;
+  max-width: 320px;   
+
+  z-index: 5;
+  color: #47210E;
+  text-align: center;
 }
 
+
 .title {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 800;
-  margin-top: 40px;
+  margin-top: 80px;
   margin-bottom:5px;
 }
 
 .subtitle {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .divider {
@@ -76,7 +91,7 @@
   font-size: 18px;
   font-weight: 600;
 
-  padding: 14px 30px;
+  padding: 10px 16px;
   border-radius: 10px;
 
   display: inline-flex;
@@ -140,7 +155,7 @@
 /* T&C TEXT – DEFAULT (DESKTOP) */
 .tnc-text {
   position: absolute;
-  bottom: 16px;
+  bottom: 20px;
   left: 24px;
 
   font-size: 11px;
@@ -169,14 +184,29 @@
     height: auto;
   }
 
-  .banner-text {
-    position: relative;  /* removes absolute */
+  /* .banner-text {
+    position: relative;  
     right: auto;
     top: auto;
     width: 100%;
-    margin-top: -30px; /* pulls text closer to fade */
+    margin-top: -30px; 
     padding: 20px 15px;
-    background: #fbedd2;  /* mobile beige section */
+    background: #fbedd2;  
+    text-align: center;
+  } */
+
+  .banner-text {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+
+    width: 100%;
+    max-width: none;
+
+    margin-top: -30px;
+    padding: 20px 15px;
+    background: #fbedd2;
     text-align: center;
   }
 
