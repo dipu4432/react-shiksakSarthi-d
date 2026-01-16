@@ -6,7 +6,7 @@ import interior4 from '/interiors/warranty-home-interiors.png';
 const Home2 = () => {
   return (
     <div className="container text-center mt-5">
-      <h2>Why Choose Colours Kitchen Gallery ?</h2>
+      <h2>Why Choose Colours Kitchen Gallery?</h2>
 
       <div className="row m-4 gy-4">
         
