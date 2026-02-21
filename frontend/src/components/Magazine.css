@@ -1,0 +1,198 @@
+.magazine-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+.magazine-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.magazine-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-divider {
+  color: #ef4444;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.share-button {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #6b7280;
+}
+
+.share-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.posts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.post-card:hover {
+  transform: translateY(-8px);
+  text-decoration: none;
+}
+
+.post-image-wrapper {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
+.post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.post-card:hover .post-image {
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+.post-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 60px;
+}
+
+.post-description {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.story-link{
+  text-decoration: none !important;
+}
+.post-date {
+  font-size: 0.875rem;
+  color: #ef4444;
+  font-weight: 500;
+  margin-top: 8px;
+  display: block;
+}
+
+.no-posts {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .posts-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .magazine-container {
+    padding: 20px 16px;
+  }
+
+  .magazine-title {
+    font-size: 1.75rem;
+  }
+
+  .title-divider {
+    font-size: 2rem;
+  }
+
+  .posts-grid {
+    gap: 24px;
+  }
+
+  .post-image-wrapper {
+    height: 400px;
+  }
+
+  .post-title {
+    font-size: 1.25rem;
+    min-height: auto;
+  }
+
+  .post-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .magazine-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .magazine-title {
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .share-button {
+    align-self: flex-end;
+  }
+}
