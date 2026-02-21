@@ -5,6 +5,17 @@
   text-align: center;
 }
 
+/* Footer sticky bottom layout */
+.text-bg-light {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.text-bg-light > main {
+  flex: 1;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -1,24 +1,38 @@
-
-import { Link, Routes, Route, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, Routes, Route, useNavigate } from "react-router-dom";
+import { useState } from "react";
 // import Home from './home/Home'
-import Upload from './pages/Upload'
+import Upload from "./pages/Upload";
 // import Login from './pages/Login'
 // import Register from './pages/Register'
-import { getUser, clearAuth, getToken } from './lib/auth'
+import { getUser, clearAuth, getToken } from "./lib/auth";
 // import './App.css'
 
-import Front from './components/front'
-import Navigation from './components/navigation'
-import Footer from './components/footer'
+import Home from "./components/home";
+import SecondFront from "./components/secondFront";
+import NavBar from "./components/navBar.jsx";
+import Footer from "./components/footer";
 import ConsultationForm from "./components/consultationForm.jsx";
+import DesignDetails from "./designIdeas/template/designDetails.jsx";
 
-const API = import.meta.env.VITE_API_URL || 'https://react-shiksak-sarthi-d.vercel.app'
+import Press from "./components/press.jsx";
+import RAF from "./components/referAFriend.jsx";
+import About from "./components/about.jsx";
+import Contact from "./components/contact.jsx";
+import Policies from "./components/policies.jsx";
+import Magazine from "./components/Magazine.jsx";
+import Story from "./components/Story.jsx";
+import ProjectPage from "./components/ProjectPage.jsx";
+import ProjectDetailPage from "./components/ProjectDetailPage.jsx";
+import TurnkeyProject from "./components/turnkeyProject";
+import ConstructionServices from "./components/constructionServices";
+
+const API =
+  import.meta.env.VITE_API_URL || "https://react-shiksak-sarthi-d.vercel.app";
 
 function App() {
-  const [user, setUser] = useState(getUser())
-  const navigate = useNavigate()
-  
+  const [user, setUser] = useState(getUser());
+  const navigate = useNavigate();
+
   // POPUP STATE
   const [showPopup, setShowPopup] = useState(false);
 
@@ -28,20 +42,21 @@ function App() {
 
   async function handleLogout() {
     try {
-      const token = getToken()
+      const token = getToken();
       if (token) {
-        await fetch(`${API}/api/auth/logout`, { // || 'http://localhost:5173'}/api/auth/logout, {
-          method: 'POST',
-          headers: { Authorization: `Bearer ${token}` }
-        })
+        await fetch(`${API}/api/auth/logout`, {
+          // || 'http://localhost:5173'}/api/auth/logout, {
+          method: "POST",
+          headers: { Authorization: `Bearer ${token}` },
+        });
       }
     } catch (err) {
       // ignore logout network errors
-      console.error('Logout error', err)
+      console.error("Logout error", err);
     }
-    clearAuth()
-    setUser(null)
-    navigate('/')
+    clearAuth();
+    setUser(null);
+    navigate("/");
   }
 
   return (
@@ -66,15 +81,35 @@ function App() {
           )}
         </div>
       </nav> */}
-      <Navigation onQuoteClick={openPopup} />
+      <NavBar onQuoteClick={openPopup} />
 
-      <main>
+      <main style={{ paddingTop: "60px" }}>
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/upload" element={<Upload />} />
-          <Route path="/" element={<Front />} />
+          <Route path="/" element={<Home onQuoteClick={openPopup} />} />
+          <Route path="/secondFront/:designType" element={<SecondFront onQuoteClick={openPopup} />} />
+          <Route
+            path="/designDetails/:pageKey/:imageId"
+            element={<DesignDetails onQuoteClick={openPopup} />}
+          />
+          <Route path="/magazine" element={<Magazine />} />
+
+          <Route path="/story" element={<Story />} />
+
+          <Route path="/project" element={<ProjectPage />} />
+
+          <Route path="/project-details/:id" element={<ProjectDetailPage />} />
           {/* <Route path="/login" element={<Login onLogin={(u) => setUser(u)} />} />
           <Route path="/register" element={<Register onRegister={(u) => setUser(u)} />} /> */}
+          <Route path="/press" element={<Press />} />
+          <Route path="/refer-a-friend" element={<RAF />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/contact-us" element={<Contact />} />
+          <Route path="/policies" element={<Policies />} />
+          <Route path="/turnkey-project" element={<TurnkeyProject />} />
+          <Route path="/construction-services" element={<ConstructionServices />} />
+
         </Routes>
       </main>
       <Footer />
@@ -88,13 +123,16 @@ function App() {
             className="bg-white p-4 rounded shadow"
             style={{ width: "90%", paddingTop: "90px", maxWidth: "600px" }}
           >
-            <button className="btn-close float-end" onClick={closePopup}></button>
+            <button
+              className="btn-close float-end"
+              onClick={closePopup}
+            ></button>
             <ConsultationForm onSuccess={closePopup} />
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

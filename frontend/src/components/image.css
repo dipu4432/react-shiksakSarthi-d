@@ -14,17 +14,52 @@
   display: block;
 }
 
-/* Fix navbar wrap at 320px */
-/* @media (max-width: 360px) {
-  .navbar-brand {
-    font-size: 24px !important;
-    white-space: nowrap;
-  }
-} */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  display: none;
+}
+
+/* Prevent closing when clicking submenu button */
+.dropdown-submenu > button {
+  background: none;
+  border: 0;
+  width: 100%;
+  text-align: left;
+}
+
 
 .navbar-brand img {
   max-height: 100px;
 }
+
+/* Nested dropdown support */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  display: none;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Fix caret alignment */
+.dropdown-submenu > .dropdown-toggle::after {
+  float: right;
+  margin-top: 6px;
+}
+
 
 @media (max-width: 576px) {
   .navbar-brand img {
@@ -32,4 +67,99 @@
   }
 }
 
+/* ===================== MEGA MENU ===================== */
+
+.mega-dropdown .dropdown-menu {
+  width: 650px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.mega-dropdown-two .dropdown-menu {
+  width: 550px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.mega-dropdown-one .dropdown-menu {
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* 3 columns grid */
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 0;
+}
+
+/* 2 columns grid */
+.mega-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 0;
+}
+
+/* Mega dropdown links */
+.mega-link {
+  display: block;
+  text-decoration: none;
+  color: #000 !important;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.mega-link:hover {
+  background: rgba(13, 110, 253, 0.12);
+  color: #0d6efd !important;
+}
+
+/* Active (after click) effect */
+.mega-active {
+  background: rgba(13, 110, 253, 0.2);
+  color: red !important;
+  font-weight: 600;
+}
+
+
+/* Mobile active dropdown item */
+.dropdown-item.mobile-active {
+  background: rgba(13, 110, 253, 0.2);
+  color: red !important;
+  font-weight: 600;
+}
+
+.offcanvas .nav-link.mobile-nav-active {
+  color: red !important;
+  font-weight: 600;
+}
+
+/* Mobile dropdown scrollable */
+.offcanvas .dropdown-menu {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* Responsive for mobile */
+@media (max-width: 992px) {
+  .mega-dropdown .dropdown-menu {
+    width: 100%;
+  }
+
+  .mega-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mega-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
 

@@ -70,7 +70,7 @@ export default function Upload() {
     try {
       setLoading(true);
       setMessage("");
-      console.log("UPLOAD URL:", `${API}/api/media/upload`);
+      // console.log("UPLOAD URL:", `${API}/api/media/upload`);
       // console.log("UPLOAD TOKEN:", token);
 
       // const token = getToken();
