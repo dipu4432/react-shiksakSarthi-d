@@ -1,0 +1,460 @@
+{
+  "room-ideas": [
+    {
+      "title": "Modern Bedroom Design with Neutral Tones",
+      "description": "A calming bedroom design using neutral shades, modern furniture, and soft lighting.",
+      "date": "2025-01-05",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Small Living Room Space-Saving Ideas",
+      "description": "Smart layouts and multifunctional furniture ideas for compact living rooms.",
+      "date": "2025-01-07",
+      "imageUrl": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Luxury Master Bedroom Inspiration",
+      "description": "Elegant master bedroom interiors with premium materials and ambient lighting.",
+      "date": "2025-01-10",
+      "imageUrl": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Kids Room Design with Playful Themes",
+      "description": "Creative kids room interiors with playful colors and practical storage.",
+      "date": "2025-01-12",
+      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Minimalist Study Room Setup",
+      "description": "Minimal study room design focused on productivity and clutter-free spaces.",
+      "date": "2025-01-15",
+      "imageUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+
+  "decor-inspiration": [
+    {
+      "title": "Boho Home Decor Inspiration",
+      "description": "Bohemian decor ideas with earthy tones, textures, and indoor plants.",
+      "date": "2025-01-06",
+      "imageUrl": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Scandinavian Interior Inspiration",
+      "description": "Bright and cozy Scandinavian interiors with functional design.",
+      "date": "2025-01-08",
+      "imageUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Vintage Decor Styling Ideas",
+      "description": "Vintage decor concepts blending classic charm with modern comfort.",
+      "date": "2025-01-11",
+      "imageUrl": "https://images.unsplash.com/photo-1642965199462-d0ffa25ea134?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Modern Indian Home Decor",
+      "description": "Contemporary Indian home decor with warm tones and cultural accents.",
+      "date": "2025-01-14",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Wall Art and Accessories Inspiration",
+      "description": "Creative wall decor ideas using artwork, mirrors, and accessories.",
+      "date": "2025-01-18",
+      "imageUrl": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+
+  "ceiling-designs": [
+    {
+      "title": "False Ceiling Design for Living Room",
+      "description": "Modern false ceiling designs with layered lighting concepts.",
+      "date": "2025-01-04",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "POP Ceiling Designs for Bedroom",
+      "description": "Stylish POP ceiling designs enhancing bedroom interiors.",
+      "date": "2025-01-09",
+      "imageUrl": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Wooden Ceiling Design Ideas",
+      "description": "Warm wooden ceiling designs that add luxury and depth.",
+      "date": "2025-01-13",
+      "imageUrl": "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Minimal Ceiling Designs with LED Lights",
+      "description": "Simple ceiling layouts paired with subtle LED lighting.",
+      "date": "2025-01-16",
+      "imageUrl": "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Modern Gypsum Ceiling Designs",
+      "description": "Contemporary gypsum ceiling ideas suitable for modern homes.",
+      "date": "2025-01-19",
+      "imageUrl": "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+
+  "home-decor": [
+    {
+      "title": "Modern Home Decor with Neutral Palette",
+      "description": "Elegant home decor ideas using neutral tones and minimal accessories.",
+      "date": "2025-01-06",
+      "imageUrl": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Statement Decor Pieces for Living Room",
+      "description": "Bold decor accents that instantly uplift your living room aesthetics.",
+      "date": "2025-01-09",
+      "imageUrl": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Minimal Home Decor Styling",
+      "description": "Clean and simple decor styling ideas for a clutter-free home.",
+      "date": "2025-01-12",
+      "imageUrl": "https://images.unsplash.com/photo-1522444195799-478538b28823?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Luxury Home Decor Inspiration",
+      "description": "Premium home decor concepts featuring rich textures and finishes.",
+      "date": "2025-01-15",
+      "imageUrl": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Indoor Plants for Home Decor",
+      "description": "Decorating homes with indoor plants for a fresh and natural look.",
+      "date": "2025-01-18",
+      "imageUrl": "https://images.unsplash.com/photo-1709166447876-1d75cdce6cac?auto=format&fit=crop&w=1920&q"
+    }
+  ],
+
+  "lighting-ideas": [
+    {
+      "title": "Ambient Lighting Ideas for Living Room",
+      "description": "Soft ambient lighting concepts to create a warm living space.",
+      "date": "2025-01-05",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Modern Pendant Light Designs",
+      "description": "Stylish pendant lights for dining and kitchen areas.",
+      "date": "2025-01-08",
+      "imageUrl": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Bedroom Lighting Ideas for Relaxation",
+      "description": "Lighting setups designed to create a cozy bedroom environment.",
+      "date": "2025-01-11",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "LED Strip Lighting for Interiors",
+      "description": "Modern LED strip lighting ideas for ceilings and walls.",
+      "date": "2025-01-14",
+      "imageUrl": "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Decorative Lamps for Home",
+      "description": "Table and floor lamps that enhance both lighting and decor.",
+      "date": "2025-01-18",
+      "imageUrl": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+
+  "wall-design-ideas": [
+    {
+      "title": "Accent Wall Design for Living Room",
+      "description": "Stylish accent wall ideas using textures and colors.",
+      "date": "2025-01-06",
+      "imageUrl": "https://images.unsplash.com/photo-1522444195799-478538b28823?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Wall Panel Designs for Modern Homes",
+      "description": "Decorative wall panel concepts for contemporary interiors.",
+      "date": "2025-01-09",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Wallpaper Design Ideas",
+      "description": "Trendy wallpaper designs for bedrooms and living rooms.",
+      "date": "2025-01-12",
+      "imageUrl": "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Wall Art Arrangement Ideas",
+      "description": "Creative ways to arrange wall art for visual appeal.",
+      "date": "2025-01-15",
+      "imageUrl": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Textured Wall Finish Designs",
+      "description": "Unique textured wall finishes for modern interiors.",
+      "date": "2025-01-18",
+      "imageUrl": "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+
+  "expert-advice": [
+    {
+      "title": "Interior Design Tips from Experts",
+      "description": "Professional tips to improve home interiors efficiently.",
+      "date": "2025-01-07",
+      "imageUrl": "https://images.unsplash.com/photo-1726090401458-7abb00f7450c?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "How to Plan Your Home Interior",
+      "description": "Step-by-step expert guidance for planning home interiors.",
+      "date": "2025-01-10",
+      "imageUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Budget-Friendly Interior Design Advice",
+      "description": "Smart interior solutions that fit within your budget.",
+      "date": "2025-01-13",
+      "imageUrl": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Common Interior Design Mistakes",
+      "description": "Expert insights on common mistakes and how to avoid them.",
+      "date": "2025-01-16",
+      "imageUrl": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Choosing the Right Color Palette",
+      "description": "Expert advice on selecting colors that suit your space.",
+      "date": "2025-01-19",
+      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+
+  "interior-advice": [
+    {
+      "title": "Interior Design Tips for Small Homes",
+      "description": "Practical advice to make small homes look spacious.",
+      "date": "2025-01-08",
+      "imageUrl": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Balancing Functionality and Aesthetics",
+      "description": "Tips to achieve both beauty and functionality in interiors.",
+      "date": "2025-01-11",
+      "imageUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Interior Styling for Rental Homes",
+      "description": "Easy interior upgrades suitable for rental properties.",
+      "date": "2025-01-14",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Mixing Modern and Traditional Interiors",
+      "description": "Tips to blend modern and traditional design styles.",
+      "date": "2025-01-17",
+      "imageUrl": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Interior Maintenance Tips",
+      "description": "Advice on maintaining interiors for long-lasting appeal.",
+      "date": "2025-01-20",
+      "imageUrl": "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+  "furniture-ideas": [
+    {
+      "title": "Modern Sofa Design for Living Room",
+      "description": "Stylish modern sofa designs that combine comfort with contemporary aesthetics.",
+      "date": "2025-01-06",
+      "imageUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Space-Saving Furniture for Small Homes",
+      "description": "Smart furniture ideas designed to maximize space in compact homes.",
+      "date": "2025-01-09",
+      "imageUrl": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Wooden Furniture Design Inspiration",
+      "description": "Timeless wooden furniture designs that add warmth and elegance to interiors.",
+      "date": "2025-01-12",
+      "imageUrl": "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Minimalist Furniture for Modern Homes",
+      "description": "Clean and minimal furniture designs focused on functionality and simplicity.",
+      "date": "2025-01-15",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Luxury Furniture Ideas for Premium Interiors",
+      "description": "High-end furniture ideas featuring premium materials and refined finishes.",
+      "date": "2025-01-18",
+      "imageUrl": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+  "home-organisation": [
+    {
+      "title": "Smart Home Organisation Ideas",
+      "description": "Practical home organisation ideas to keep your space neat and clutter-free.",
+      "date": "2025-01-06",
+      "imageUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Storage Solutions for Small Homes",
+      "description": "Creative storage solutions designed for compact living spaces.",
+      "date": "2025-01-09",
+      "imageUrl": "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Wardrobe Organisation Tips",
+      "description": "Simple wardrobe organisation techniques to maximize storage efficiency.",
+      "date": "2025-01-12",
+      "imageUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Kitchen Organisation Ideas",
+      "description": "Smart kitchen organisation ideas for better accessibility and hygiene.",
+      "date": "2025-01-15",
+      "imageUrl": "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Minimalist Home Organisation",
+      "description": "Minimal organisation ideas that focus on simplicity and functionality.",
+      "date": "2025-01-18",
+      "imageUrl": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+
+  "materials-guide": [
+    {
+      "title": "Wood Materials Guide for Interiors",
+      "description": "A detailed guide on using wood materials for interior design.",
+      "date": "2025-01-07",
+      "imageUrl": "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Marble vs Granite for Home Interiors",
+      "description": "Comparison of marble and granite for flooring and countertops.",
+      "date": "2025-01-10",
+      "imageUrl": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Guide to Laminates and Veneers",
+      "description": "Understanding laminates and veneers for modern furniture.",
+      "date": "2025-01-13",
+      "imageUrl": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Flooring Materials Explained",
+      "description": "A complete guide to different flooring materials and their usage.",
+      "date": "2025-01-16",
+      "imageUrl": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Sustainable Materials for Homes",
+      "description": "Eco-friendly material options for sustainable interior design.",
+      "date": "2025-01-19",
+      "imageUrl": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+
+  "home-renovation-ideas": [
+    {
+      "title": "Complete Home Renovation Guide",
+      "description": "Step-by-step guide for planning and executing home renovations.",
+      "date": "2025-01-08",
+      "imageUrl": "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Budget-Friendly Home Renovation Ideas",
+      "description": "Affordable renovation ideas that make a big impact.",
+      "date": "2025-01-11",
+      "imageUrl": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Kitchen Renovation Inspiration",
+      "description": "Modern kitchen renovation ideas for stylish upgrades.",
+      "date": "2025-01-14",
+      "imageUrl": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Bathroom Renovation Ideas",
+      "description": "Bathroom renovation ideas focusing on comfort and aesthetics.",
+      "date": "2025-01-17",
+      "imageUrl": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Before and After Renovation Ideas",
+      "description": "Transformation stories showcasing before and after renovations.",
+      "date": "2025-01-20",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+
+  "commercial-interiors": [
+    {
+      "title": "Modern Office Interior Design",
+      "description": "Contemporary office interior designs focused on productivity.",
+      "date": "2025-01-09",
+      "imageUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Retail Store Interior Design Ideas",
+      "description": "Retail interior concepts that enhance customer experience.",
+      "date": "2025-01-12",
+      "imageUrl": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Restaurant Interior Design Inspiration",
+      "description": "Stylish restaurant interior ideas for modern dining spaces.",
+      "date": "2025-01-15",
+      "imageUrl": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Co-Working Space Interior Design",
+      "description": "Creative co-working interior designs for collaboration.",
+      "date": "2025-01-18",
+      "imageUrl": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Hotel and Lobby Interior Design",
+      "description": "Luxury hotel and lobby interior concepts for premium appeal.",
+      "date": "2025-01-21",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=95"
+    }
+  ],
+  "vastu-tips": [
+    {
+      "title": "Vastu Tips for Home Entrance",
+      "description": "Essential Vastu guidelines for designing a positive and welcoming home entrance.",
+      "date": "2025-01-06",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Living Room Vastu Tips",
+      "description": "Vastu tips to maintain balance, positivity, and harmony in the living room.",
+      "date": "2025-01-09",
+      "imageUrl": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Bedroom Vastu Tips for Better Sleep",
+      "description": "Bedroom Vastu recommendations to promote peace, health, and restful sleep.",
+      "date": "2025-01-12",
+      "imageUrl": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Kitchen Vastu Tips",
+      "description": "Important Vastu rules for kitchen placement, layout, and appliances.",
+      "date": "2025-01-15",
+      "imageUrl": "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1920&q=95"
+    },
+    {
+      "title": "Vastu Tips for Home Office",
+      "description": "Vastu tips to improve focus, productivity, and success in home offices.",
+      "date": "2025-01-18",
+      "imageUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1920&q=95"
+    }
+  ]
+}

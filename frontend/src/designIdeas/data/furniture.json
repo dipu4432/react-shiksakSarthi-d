@@ -1,0 +1,208 @@
+{
+    "sofasAndSofaBed": {
+        "id": 1,
+        "name": "Modern Sofa",
+        "images": [
+            {
+                "id": "SB-1",
+                "src": "SB-1.jpeg",
+                "desc": "Modern sofa bed design"
+            },
+            {
+                "id": "SB-2",
+                "src": "SB-2.jpeg",
+                "desc": "Comfortable sofa bed"
+            },
+            {
+                "id": "SB-3",
+                "src": "SB-3.jpeg",
+                "desc": "Comfortable sofa bed"
+            },
+            {
+                "id": "SB-4",
+                "src": "SB-4.jpeg",
+                "desc": "Stylish living room sofa"
+            },
+            {
+                "id": "SB-5",
+                "src": "SB-5.jpeg",
+                "desc": "Modern sofa design"
+            },
+            {
+                "id": "SB-6",
+                "src": "SB-6.jpeg",
+                "desc": "Comfortable Luxury sofa"
+            },
+            {
+                "id": "SB-7",
+                "src": "SB-7.jpeg",
+                "desc": "Luxury sofa with premium fabric"
+            },
+            {
+                "id": "SB-8",
+                "src": "SB-8.jpeg",
+                "desc": "Minimalist modern sofa"
+            },
+            {
+                "id": "SB-9",
+                "src": "SB-9.jpeg",
+                "desc": "Elegant corner sofa"
+            }
+        ]
+    },
+    "diningTableAndSets": {
+        "id": 2,
+        "name": "Wooden Dining Table",
+        "images": [
+            {
+                "id": "DTS-1",
+                "src": "DTS-1.jpeg",
+                "desc": "Modern dining table"
+            },
+            {
+                "id": "DTS-2",
+                "src": "DTS-2.jpeg",
+                "desc": "Comfortable dining table"
+            },
+            {
+                "id": "DTS-3",
+                "src": "DTS-3.jpeg",
+                "desc": "Luxury dining table"
+            },
+            {
+                "id": "DTS-4",
+                "src": "DTS-4.jpeg",
+                "desc": "Stylish living room dining table"
+            },
+            {
+                "id": "DTS-5",
+                "src": "DTS-5.jpeg",
+                "desc": "Modern dining table design"
+            },
+            {
+                "id": "DTS-6",
+                "src": "DTS-6.jpeg",
+                "desc": "Comfortable dining table"
+            },
+            {
+                "id": "DTS-7",
+                "src": "DTS-7.jpeg",
+                "desc": "Luxury dining table with premium fabric"
+            },
+            {
+                "id": "DTS-8",
+                "src": "DTS-8.jpeg",
+                "desc": "Elegant corner dining table"
+            },
+            {
+                "id": "DTS-9",
+                "src": "DTS-9.jpeg",
+                "desc": "Minimalist modern dining table"
+            }
+        ]
+    },
+    "tables": {
+        "id": 3,
+        "name": "Modern Tables",
+        "description": "A sleek and comfortable modern table perfect for any dining room.",
+        "images": [
+            {
+                "id": "TD-1",
+                "src": "TD-1.jpeg",
+                "desc": "Modern table design"
+            },
+            {
+                "id": "TD-2",
+                "src": "TD-2.jpeg",
+                "desc": "Shining table"
+            },
+            {
+                "id": "TD-3",
+                "src": "TD-3.jpeg",
+                "desc": "Luxury living room table"
+            },
+            {
+                "id": "TD-4",
+                "src": "TD-4.jpeg",
+                "desc": "Stylish living room table"
+            },
+            {
+                "id": "TD-5",
+                "src": "TD-5.jpeg",
+                "desc": "Modern table design"
+            },
+            {
+                "id": "TD-6",
+                "src": "TD-6.jpeg",
+                "desc": "Comfortable dining table"
+            },
+            {
+                "id": "TD-7",
+                "src": "TD-7.jpeg",
+                "desc": "Luxury table with premium fabric"
+            },
+            {
+                "id": "TD-8",
+                "src": "TD-8.jpeg",
+                "desc": "Elegant corner table"
+            },
+            {
+                "id": "TD-9",
+                "src": "TD-9.jpeg",
+                "desc": "Minimalist modern table"
+            }
+        ]
+    },
+    "occasionalSeating": {
+        "id": 4,
+        "name": "Occasional Seating",
+        "description": "Occasional seating in living room or personal room or balcony.",
+        "images": [
+            {
+                "id": "OS-1",
+                "src": "OS-1.jpeg",
+                "desc": "Modern chair design"
+            },
+            {
+                "id": "OS-2",
+                "src": "OS-2.jpeg",
+                "desc": "Comfortable chair"
+            },
+            {
+                "id": "OS-3",
+                "src": "OS-3.jpeg",
+                "desc": "Luxury chair"
+            },
+            {
+                "id": "OS-4",
+                "src": "OS-4.jpeg",
+                "desc": "Stylish living room chair"
+            },
+            {
+                "id": "OS-5",
+                "src": "OS-5.jpeg",
+                "desc": "Modern chair design"
+            },
+            {
+                "id": "OS-6",
+                "src": "OS-6.jpeg",
+                "desc": "Comfortable chair"
+            },
+            {
+                "id": "OS-7",
+                "src": "OS-7.jpeg",
+                "desc": "Luxury chair with premium fabric"
+            },
+            {
+                "id": "OS-8",
+                "src": "OS-8.jpeg",
+                "desc": "Elegant corner chair"
+            },
+            {
+                "id": "OS-9",
+                "src": "OS-9.jpeg",
+                "desc": "Minimalist modern chair"
+            }
+        ]
+    }
+}

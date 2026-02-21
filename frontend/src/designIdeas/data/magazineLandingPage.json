@@ -1,0 +1,73 @@
+{
+  "featuredArticles": [
+    {
+      "id": 1,
+      "title": "Modern Minimalist Living Spaces",
+      "category": "Interior Design",
+      "categoryRoute": "room-ideas",
+      "excerpt": "Discover the art of living with less while maintaining style and functionality in your home.",
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+      "author": "Sarah Johnson",
+      "date": "Jan 28, 2026"
+    },
+    {
+      "id": 2,
+      "title": "Kitchen Design Trends 2026",
+      "category": "Kitchen",
+      "categoryRoute": "home-decor",
+      "excerpt": "Explore the latest innovations and aesthetic movements shaping contemporary kitchen design.",
+      "image": "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
+      "author": "Michael Chen",
+      "date": "Jan 25, 2026"
+    },
+    {
+      "id": 3,
+      "title": "Sustainable Home Furniture",
+      "category": "Furniture",
+      "categoryRoute": "furniture-ideas",
+      "excerpt": "How eco-friendly furniture choices can transform your living space and reduce environmental impact.",
+      "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+      "author": "Emma Wilson",
+      "date": "Jan 22, 2026"
+    },
+    {
+      "id": 4,
+      "title": "Bedroom Sanctuaries",
+      "category": "Bedroom",
+      "categoryRoute": "room-ideas",
+      "excerpt": "Creating peaceful retreats that promote rest, relaxation, and rejuvenation.",
+      "image": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+      "author": "David Martinez",
+      "date": "Jan 20, 2026"
+    },
+    {
+      "id": 5,
+      "title": "Smart Home Integration",
+      "category": "Technology",
+      "categoryRoute": "expert-advice",
+      "excerpt": "Seamlessly blend technology with interior design for a modern, connected home.",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "author": "Lisa Anderson",
+      "date": "Jan 18, 2026"
+    },
+    {
+      "id": 6,
+      "title": "Outdoor Living Spaces",
+      "category": "Outdoor",
+      "categoryRoute": "home-decor",
+      "excerpt": "Transform your patio, balcony, or garden into an extension of your home.",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "author": "James Lee",
+      "date": "Jan 15, 2026"
+    }
+  ],
+  "categories": [
+    "all",
+    "Interior Design",
+    "Kitchen",
+    "Bedroom",
+    "Furniture",
+    "Technology",
+    "Outdoor"
+  ]
+}

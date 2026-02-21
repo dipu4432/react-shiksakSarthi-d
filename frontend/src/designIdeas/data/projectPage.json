@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80",
+    "title": "3BHK Interior Design in Noida with Beige Tufted Sectional Sofa for Living Room",
+    "location": "Full Home",
+    "rooms": "#Noida, #Living Room",
+    "price": "2.8lk",
+    "size": "10 - 25 Lakhs"
+  },
+  {
+    "id": 2,
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80",
+    "title": "Contemporary 3BHK Interior Design in Noida with Parallel Kitchen",
+    "location": "Annual Sales Pack",
+    "rooms": "#Noida",
+    "price": "2.8lk",
+    "size": "10 - 25 Lakhs"
+  },
+  {
+    "id": 3,
+    "image": "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=600&q=80",
+    "title": "Contemporary 3BHK Interior Design in Noida with Parallel Kitchen",
+    "location": "Full Rooms",
+    "rooms": "#Noida, #Living Room",
+    "price": "2.8lk",
+    "size": "10 - 25 Lakhs"
+  },
+  {
+    "id": 4,
+    "image": "https://images.unsplash.com/photo-1617104678098-de229db51175?w=600&q=80",
+    "title": "4BHK Modern Style Interior Design in Noida with Ply Foyer",
+    "location": "Simple Home",
+    "rooms": "#Noida, #Living Room, #Living Room, #",
+    "price": "2.8lk",
+    "size": "10 - 25 Lakhs"
+  },
+  {
+    "id": 5,
+    "image": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80",
+    "title": "3BHK Interior Design in Hyderabad with Sleek L-Shaped Sofa and TV Unit with",
+    "location": "Package Tranquil",
+    "rooms": "#Noida",
+    "price": "2.8lk",
+    "size": "10 - 25 Lakhs"
+  },
+  {
+    "id": 6,
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
+    "title": "3BHK Interior Design in Hyderabad with Simple Wall Panels and Modern Stairct",
+    "location": "Winter Textiles",
+    "rooms": "#Noida",
+    "price": "2.8lk",
+    "size": "10 - 25 Lakhs"
+  }
+]
