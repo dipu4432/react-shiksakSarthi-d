@@ -1,5 +1,83 @@
+// Replace an image by MongoDB _id: delete old, upload new, return new doc
+// const { Media } = require("../models/Media");
+
 const { cloudinary } = require('../config/cloudinary');
 const Media = require('../models/Media');
+
+
+exports.replace = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    if (!id) return res.status(400).json({ message: 'Missing id' });
+
+    // Find the old media doc
+    const oldMedia = await Media.findById(id);
+    if (!oldMedia) return res.status(404).json({ message: 'Media not found' });
+
+    // Delete from Cloudinary
+    if (oldMedia.public_id) {
+      try {
+        const resourceType = oldMedia.resource_type || 'image';
+        await cloudinary.uploader.destroy(oldMedia.public_id, { resource_type: resourceType });
+      } catch (e) {
+        console.error('Cloudinary delete error', e && e.message ? e.message : e);
+      }
+    }
+
+    // Delete from MongoDB
+    await Media.findByIdAndDelete(id);
+
+    // Now upload the new file (single file expected)
+    if (!req.file) return res.status(400).json({ message: 'No file uploaded' });
+    const rawCategory = req.body.category;
+    const normalizedCategory = rawCategory ? rawCategory.toLowerCase().replace(/\s+/g, '') : null;
+    const category = ALLOWED_CATEGORIES.includes(normalizedCategory) ? normalizedCategory : 'others';
+
+    const streamUpload = (file) =>
+      new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream({ folder: `siksha/${category}` }, async (error, result) => {
+          if (error) return reject(error);
+          try {
+            const docData = {
+              url: result.secure_url,
+              public_id: result.public_id,
+              category,
+              format: result.format,
+              resource_type: result.resource_type,
+              bytes: result.bytes,
+              width: result.width,
+              height: result.height,
+              uploadedBy: req.user ? req.user.id : undefined,
+              description: req.body && req.body.description ? req.body.description : undefined
+            };
+            const created = await Media.create(docData);
+            resolve(created);
+          } catch (e) {
+            const fallback = {
+              url: result.secure_url,
+              public_id: result.public_id,
+              format: result.format,
+              resource_type: result.resource_type,
+              bytes: result.bytes,
+              width: result.width,
+              height: result.height,
+              uploadedBy: req.user ? req.user.id : undefined,
+              description: req.body && req.body.description ? req.body.description : undefined,
+              createdAt: new Date()
+            };
+            console.error('Failed to save Media document', e && e.message ? e.message : e);
+            resolve(fallback);
+          }
+        });
+        stream.end(file.buffer);
+      });
+
+    const newMedia = await streamUpload(req.file);
+    return res.status(201).json({ replaced: newMedia });
+  } catch (err) {
+    next(err);
+  }
+};
 
 // allowed upload categories (radio buttons)
 const ALLOWED_CATEGORIES = ['kitchen', 'bedroom', 'livingroom', 'bathroom'];
@@ -8,13 +86,13 @@ const ALLOWED_CATEGORIES = ['kitchen', 'bedroom', 'livingroom', 'bathroom'];
 exports.upload = async (req, res, next) => {
   // console.log(" UPLOAD CONTROLLER HIT ");
   // Normalize category from frontend
-const rawCategory = req.body.category;
+  const rawCategory = req.body.category;
 
-// normalize: lowercase + remove spaces
-const normalizedCategory = rawCategory
-  ? rawCategory.toLowerCase().replace(/\s+/g, '')
-  : null;
-  
+  // normalize: lowercase + remove spaces
+  const normalizedCategory = rawCategory
+    ? rawCategory.toLowerCase().replace(/\s+/g, '')
+    : null;
+
   try {
     if (!req.files || req.files.length === 0) return res.status(400).json({ message: 'No files uploaded' });
 
@@ -23,66 +101,66 @@ const normalizedCategory = rawCategory
       ? normalizedCategory
       : 'others';
 
-      // console.log("UPLOAD CATEGORY:", req.body.category);
+    // console.log("UPLOAD CATEGORY:", req.body.category);
 
-      // console.log("FINAL CATEGORY:", category);
+    // console.log("FINAL CATEGORY:", category);
 
     const results = [];
 
-      const uploadSingle = (file) =>
-        new Promise((resolve, reject) => {
-          const stream = cloudinary.uploader.upload_stream({ folder: `siksha/${category}` }, async (error, result) => {
-            if (error) return reject(error);
-            try {
-              // Build MongoDB document data
-              const docData = {
-                url: result.secure_url,
-                public_id: result.public_id,
-                category,
-                format: result.format,
-                resource_type: result.resource_type,
-                bytes: result.bytes,
-                width: result.width,
-                height: result.height,
-                uploadedBy: req.user ? req.user.id : undefined,
-                // accept optional description or other text fields sent in the multipart form
-                description: req.body && req.body.description ? req.body.description : undefined
-              };
+    const uploadSingle = (file) =>
+      new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream({ folder: `siksha/${category}` }, async (error, result) => {
+          if (error) return reject(error);
+          try {
+            // Build MongoDB document data
+            const docData = {
+              url: result.secure_url,
+              public_id: result.public_id,
+              category,
+              format: result.format,
+              resource_type: result.resource_type,
+              bytes: result.bytes,
+              width: result.width,
+              height: result.height,
+              uploadedBy: req.user ? req.user.id : undefined,
+              // accept optional description or other text fields sent in the multipart form
+              description: req.body && req.body.description ? req.body.description : undefined
+            };
 
-              // Persist to MongoDB so we track uploads and uploader
-              const created = await Media.create(docData);
+            // Persist to MongoDB so we track uploads and uploader
+            const created = await Media.create(docData);
 
-              resolve(created);
-            } catch (e) {
-              // If saving to DB fails, still return the Cloudinary result shape as a fallback
-              const fallback = {
-                url: result.secure_url,
-                // description: result.description,
-                public_id: result.public_id,
-                format: result.format,
-                resource_type: result.resource_type,
-                bytes: result.bytes,
-                width: result.width,
-                height: result.height,
-                uploadedBy: req.user ? req.user.id : undefined,
-                description: req.body && req.body.description ? req.body.description : undefined,
-                createdAt: new Date()
-              };
-              // log and resolve fallback so upload doesn't fail silently
-              console.error('Failed to save Media document', e && e.message ? e.message : e);
-              resolve(fallback);
-            }
-          });
-          stream.end(file.buffer);
+            resolve(created);
+          } catch (e) {
+            // If saving to DB fails, still return the Cloudinary result shape as a fallback
+            const fallback = {
+              url: result.secure_url,
+              // description: result.description,
+              public_id: result.public_id,
+              format: result.format,
+              resource_type: result.resource_type,
+              bytes: result.bytes,
+              width: result.width,
+              height: result.height,
+              uploadedBy: req.user ? req.user.id : undefined,
+              description: req.body && req.body.description ? req.body.description : undefined,
+              createdAt: new Date()
+            };
+            // log and resolve fallback so upload doesn't fail silently
+            console.error('Failed to save Media document', e && e.message ? e.message : e);
+            resolve(fallback);
+          }
         });
+        stream.end(file.buffer);
+      });
 
-      for (const file of req.files) {
-        // eslint-disable-next-line no-await-in-loop
-        const r = await uploadSingle(file);
-        results.push(r);
-      }
+    for (const file of req.files) {
+      // eslint-disable-next-line no-await-in-loop
+      const r = await uploadSingle(file);
+      results.push(r);
+    }
 
-      return res.status(201).json({ uploaded: results });
+    return res.status(201).json({ uploaded: results });
   } catch (err) {
     next(err);
   }
@@ -157,10 +235,10 @@ exports.list = async (req, res) => {
 // Optional: directly list Cloudinary resources (requires API key/secret)
 exports.listCloudinary = async (req, res, next) => {
   try {
-  // List only resources uploaded under the 'siksha' folder
-  // use prefix to restrict results to that folder. Include trailing slash to match folder path.
-  // Cloudinary requires the `type` parameter (e.g. 'upload') when listing resources.
-  const resources = await cloudinary.api.resources({ max_results: 50, prefix: 'siksha/', type: 'upload' });
+    // List only resources uploaded under the 'siksha' folder
+    // use prefix to restrict results to that folder. Include trailing slash to match folder path.
+    // Cloudinary requires the `type` parameter (e.g. 'upload') when listing resources.
+    const resources = await cloudinary.api.resources({ max_results: 50, prefix: 'siksha/', type: 'upload' });
     res.json(resources);
   } catch (err) {
     next(err);

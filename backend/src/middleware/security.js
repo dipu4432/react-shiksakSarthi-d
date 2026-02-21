@@ -22,11 +22,9 @@ module.exports = function securityMiddleware(app) {
   // Prevent XSS
   app.use(xss());
 
-  // CORS - adjust origin as needed
+  // CORS - allow frontend origins (localhost in dev, Vercel in prod)
   const allowedOrigins = [
-    "http://localhost:5173",
-    "https://react-shiksak-sarthi-d-c4xm.vercel.app",
-    "https://react-shiksak-sarthi-d.vercel.app",
+    "https://www.colourskitchengallery.com",
   ];
 
   app.use(
@@ -45,10 +43,10 @@ module.exports = function securityMiddleware(app) {
           return callback(null, true);
         }
 
-        // 3. Block everything else
+        // 4. Block everything else
         return callback(new Error("Not allowed by CORS"));
       },
-      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
       allowedHeaders: [
         "Content-Type",
         "Authorization",

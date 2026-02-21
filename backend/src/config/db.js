@@ -41,7 +41,9 @@ const connectDB = async () => {
       throw new Error("MONGO_URI not set");
     }
 
-    cached.promise = mongoose.connect(uri).then((mongoose) => mongoose);
+    cached.promise = mongoose.connect(uri, {
+      serverSelectionTimeoutMS: 15000, // longer for serverless cold start
+    }).then((mongoose) => mongoose);
   }
 
   cached.conn = await cached.promise;
