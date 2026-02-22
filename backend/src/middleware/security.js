@@ -24,7 +24,7 @@ module.exports = function securityMiddleware(app) {
 
   // CORS - allow frontend origins (localhost in dev, Vercel in prod)
   const allowedOrigins = [
-    "https://www.colourskitchengallery.com",
+    "https://react-shiksak-sarthi-d-c4xm.vercel.app/",
   ];
 
   app.use(
